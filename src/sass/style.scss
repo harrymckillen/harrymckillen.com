@@ -1,3 +1,7 @@
+@import 'animation';
+@import 'grid';
+@import 'hmck_icons';
+
 /* VARIABLES */
 $fjalla-font: 'Fjalla One', sans;
 $sail-font: 'Sail', cursive;
@@ -19,6 +23,19 @@ $sail-font: 'Sail', cursive;
 			background:rgba(0,0,0,0.9);	
 		}
 	}
+}
+
+@mixin textshadow ($color) {
+	text-shadow: 
+		1px 0px 0 $color,
+		-1px 0px 0 $color,
+		0px -1px 0 $color,
+		0px 1px 0 $color,
+		2px 0px 0 $color,
+		-2px 0px 0 $color,
+		0px -2px 0 $color,
+		0px 2px 0 $color
+		;
 }
 
 /*
@@ -114,17 +131,6 @@ body{
 				margin: 0; 
 			} 
 		}
-		/*&.hurley {
-			width:150px;
-			height: 99px;
-			display: block;
-			margin:0 auto 2em auto;
-			background: transparent url('/imgs/hurleys.png') 0 0 no-repeat;
-			@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { 
-				background: url('/imgs/hurleys-retina.png') no-repeat;
-				background-size: 150px 99px;	
-			}
-		}*/
 		&.footer-icons{
 			color:rgba(255,255,255,0.5);
 			text-align: center;
@@ -187,20 +193,16 @@ body{
 		background-image: url('../imgs/nz-background.jpg');
 		@include dark-theme;
 	}
-	/* Vietnam #1 */
-	&.viet-1{ 
-		background-image: url('../imgs/vietnam-background.jpg');
-		@include dark-theme;
-	}
-	/* Vietnam #2 */
-	&.viet-2{ 
-		background-image: url('../imgs/vietnam-background-2.jpg');
-		@include dark-theme;
-	}
 	/* Summer */
 	&.summer{ 
 		background-image: url('../imgs/summer-background.jpg');
 		@include dark-theme;
 	}
-
+	
+	.font-border{
+		// border-radius: 5px;
+		// text-shadow:1px 0px 0 #000;
+		// @include textshadow(#fff);
+		
+	}
 }

@@ -1,0 +1,6 @@
+# gitignore files/folder
+
+.sass-cache
+*.sh
+node_modules/
+build/
