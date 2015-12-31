@@ -5,7 +5,6 @@ module.exports = function (grunt) {
       build: {
         files: [
           { src: 'src/index.html', dest: 'build/index.html' },
-          // { src: '../yafgs/css/yafgs.max.css', dest: 'build/css/yafgs.max.css' },
           {expand: true, cwd: 'src/', src: ['js/**'], dest: 'build/'},
           {expand: true, cwd: 'src/', src: ['font/**'], dest: 'build/'},
           {expand: true, cwd: 'src/', src: ['coderdojo/**'], dest: 'build/'},
