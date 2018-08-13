@@ -1,6 +1,6 @@
-# gitignore files/folder
-
 .sass-cache
-*.sh
+.ftpauth
+hosts.json
 node_modules/
 build/
+npm-debug.log
