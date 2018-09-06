@@ -1,6 +1,23 @@
 @import 'variables';
 
+// DOS VGA Font
+@font-face {
+    font-family: 'dosvga';
+    src: url('../fonts/PerfectDOSVGA437.eot');
+    src: url('../fonts/PerfectDOSVGA437.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/PerfectDOSVGA437.woff') format('woff'),
+         url('../fonts/PerfectDOSVGA437.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
   background-color: $background;
   color: $foreground;
+  font-family: 'dosvga', serif;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+  }
 }
+

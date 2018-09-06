@@ -11,7 +11,7 @@ module.exports = function (grunt) {
     copy: {
       build: {
         files: [
-          {expand: true, cwd: 'src/', src: ['font/**'], dest: 'build/'},
+          {expand: true, cwd: 'src/', src: ['fonts/**'], dest: 'build/'},
           {expand: true, cwd: 'src/', src: ['img/**'], dest: 'build/'},
           {expand: true, cwd: 'src/', src: ['js/**'], dest: 'build/'}
         ]
@@ -38,11 +38,12 @@ module.exports = function (grunt) {
     connect: {
       server: {
         options: {
-          keepalive: true,
+          // keepalive: true,
           hostname: 'localhost',
           port: 4000,
           base: 'build/',
-          open: true
+          livereload: true
+          // open: true
         }
       }
     },
@@ -77,7 +78,7 @@ module.exports = function (grunt) {
         options: {
           process: true,
           data: {
-            sitetitle: 'Wolfhound Media Design Demos'
+            sitetitle: 'Harry McKillen'
           }
         },
         files: [
@@ -117,6 +118,7 @@ module.exports = function (grunt) {
   grunt.registerTask('serve',
     [
       'build',
+      'connect',
       'watch'
     ]);
 
