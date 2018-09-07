@@ -1,14 +1,14 @@
 {
-  "name": "project-skeleton",
+  "name": "harrymckillendotcom",
   "version": "1.0.0",
-  "description": "Sample grunt project",
+  "description": "Personal Website",
   "main": "index.js",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/harrymckillen/project-skeleton.git"
+    "url": "https://github.com/harrymckillen/harrymckillen.com.git"
   },
   "keywords": [
     "demos",
@@ -19,7 +19,7 @@
   "author": "Harry McKillen",
   "license": "none",
   "bugs": {
-    "url": "https://github.com/harrymckillen/project-skeleton/issues"
+    "url": "https://github.com/harrymckillen/harrymckillen.com/issues"
   },
   "devDependencies": {
     "grunt": "^1.0.3",
@@ -35,7 +35,7 @@
     "grunt-processhtml": "~0.4.1",
     "grunt-sass": "^2.1.0"
   },
-  "homepage": "https://github.com/harrymckillen/project-skeleton",
+  "homepage": "https://github.com/harrymckillen/harrymckillen.com",
   "dependencies": {
     "express": "~4.13.4"
   }

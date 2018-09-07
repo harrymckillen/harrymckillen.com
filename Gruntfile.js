@@ -115,23 +115,54 @@ module.exports = function (grunt) {
     [
       'build'
     ]);
-  grunt.registerTask('serve',
-    [
-      'build',
-      'connect',
-      'watch'
-    ]);
+  grunt.registerTask('serve', 'Serve the file from connect, or local apache', function (){
+
+    if(grunt.option('local')){
+      //builds to /build folder, from which apache serves it
+      grunt.task.run([
+        'build',
+        'watch'
+      ]);
+    } else {
+      // if apache not running locally, serves from localhost:4000
+      grunt.task.run([
+        'build',
+        'connect',
+        'watch'
+      ]);
+    }
+
+  });
 
   // FTP transfer task
-  grunt.registerTask('deploy', 'A simple task that ftp\'s stuff.', function (){
+  grunt.registerTask('deploy', 'A simple task that ftp\'s stuff.', function (target){
 
-    var hosts = grunt.file.readJSON('hosts.json');
+    var hosts = grunt.file.readJSON('hosts.json'),
+        env_host,
+        env_remotedir,
+        env_authkey;
+
+    if(target === 'dev'){
+      // dev env
+      env_authkey = 'dev';
+      env_host = hosts.dev.remoteurl;
+      env_remotedir = hosts.dev.remotedir;
+      console.log('Deploying to Dev Environment');
+    } else {
+      // production env
+      env_authkey = 'live';
+      env_host = hosts.live.remoteurl;
+      env_remotedir = hosts.live.remotedir;
+      console.log('Deploying to Live Environment');
+    }
+
+
     grunt.initConfig({
       ftp_push: {
         options: {
-          authKey: "dev",
-          host: hosts.dev.remoteurl,
-          dest: hosts.dev.remotedir,
+          authKey: env_authkey,
+          host: env_host,
+          dest: env_remotedir,
           port: 21,
           debug: false
         },
