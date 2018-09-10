@@ -12,11 +12,27 @@ html(lang="en" dir="ltr")
 
     meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="description" content="Harry McKillen, Web Developer, Geek, Want to be Games Developer. Dad.")
 
     meta(charset="utf-8")
     title Harry McKillen
 
   body
-    h1 Harry McKillen
-    p Mainly I'm a Web Developer. Front-end Team Lead for Aer Lingus. Irish, no desire to relocate elsewhere in the near future (sorry Recruiters), unless it's to a sunny place for my retirement. Love bingewatching TV series, not so much Movies any more. More recently listening to various podcasts/talkshows on a variety of topics; Sports, Current Affairs, History, Conspiracy Theories. Love nutters on Twitter.
+    div.grid
+      header
+        h1 Harry McKillen
+
+      section
+        ul
+          li
+            a(href="https://twitter.com/_hmck") Twitter
+          li
+            a(href="http://www.linkedin.com/in/harrymckillen") LinkedIn
+          li
+            a(href="https://github.com/harrymckillen") GitHub
+
+      article
+        p My name is #[span(itemscope itemprop="author" itemtype="http://schema.org/Person") #[meta(itemprop="description" content="I currently work for Aer Lingus as a UI Team Lead.")] #[span(itemprop="name") Harry], I am a #[span(itemprop="jobtitle") Web Developer]]  by profession. Front-end Team Lead for Aer Lingus. Wannabe Games Developer. Love bingewatching TV series, not so much Movies any more. More recently listening to various podcasts/talkshows on a variety of topics; Sports, Current Affairs, History, Conspiracy Theories. And lastly, I'm someone's Dad.<span class="blinking-cursor">&nbsp;</span>
+
+      footer (c) Harry McKillen, 2018
 

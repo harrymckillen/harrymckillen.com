@@ -1,0 +1,46 @@
+@import 'variables';
+
+@keyframes "blink" {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: $foreground;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: $foreground;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: $foreground;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: $foreground;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: $foreground;
+  }
+}

@@ -12,8 +12,7 @@ module.exports = function (grunt) {
       build: {
         files: [
           {expand: true, cwd: 'src/', src: ['fonts/**'], dest: 'build/'},
-          {expand: true, cwd: 'src/', src: ['img/**'], dest: 'build/'},
-          {expand: true, cwd: 'src/', src: ['js/**'], dest: 'build/'}
+          {expand: true, cwd: 'src/', src: ['*.txt', 'favicon.ico'], dest: 'build/'}
         ]
       }
     },
@@ -70,7 +69,7 @@ module.exports = function (grunt) {
     },
     watch: {
       options: { livereload: true },
-      files: ['src/**/*.pug', 'src/**/*.js', 'src/**/*.sass'],
+      files: ['src/**/*.pug', 'src/**/*.js', 'src/**/*.scss'],
       tasks: ['build']
     },
     processhtml: {
