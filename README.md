@@ -1,6 +1,6 @@
-# Harry McKillen Dot Com
+# harrymckillen.com
 
-Based off my grunt skeleton project repo, this seeks to be a test bed for some of the latest web technologies. For this I will not be focusing on browser support. So things might not work well in every browser, and it's by design than omission. 
+Based off my grunt skeleton project repo, this aims to be a test bed for some of the latest web technologies I'm trying to upskill in, i.e. CSS Grid etc. For this I will not be focusing too much on browser support. So things might not work well in every browser, and it's by design rather than omission. 
 
 
 It has a few grunt modules install and pre-configured out-of-the-box. 

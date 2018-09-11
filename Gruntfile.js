@@ -159,6 +159,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
       ftp_push: {
         options: {
+          incrementalUpdates: true,
           authKey: env_authkey,
           host: env_host,
           dest: env_remotedir,
@@ -167,7 +168,7 @@ module.exports = function (grunt) {
         },
         full: {
           files: [
-            {expand: true, cwd: 'build', src: ['**/*', '.htaccess']}
+            {expand: true, cwd: 'build', src: ['**/*', 'fonts/*', '.htaccess']}
           ]
         }
       }
