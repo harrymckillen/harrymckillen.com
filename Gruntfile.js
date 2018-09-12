@@ -168,15 +168,27 @@ module.exports = function (grunt) {
         },
         full: {
           files: [
-            {expand: true, cwd: 'build', src: ['**/*', 'fonts/*', '.htaccess']}
+            {expand: true, cwd: 'build', src: ['**/*', '.htaccess']},
+            {expand: true, cwd: 'build', src: ['fonts/**/*']}
+          ]
+        },
+        fonts: {
+          files: [
+            {expand: true, cwd: 'build', src: ['fonts/**/*']}
           ]
         }
       }
     });
 
-    grunt.task.run([
-      'ftp_push:full'
-    ]);
+    if(grunt.option('fonts')){
+      grunt.task.run([
+        'ftp_push:fonts'
+      ]);
+    } else {
+      grunt.task.run([
+        'ftp_push:full'
+      ]);
+    }
 
   });
 };
