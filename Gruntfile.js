@@ -20,7 +20,7 @@ module.exports = function (grunt) {
       build: {
         options: {
           implementation: 'sass',
-          style: 'compressed',
+          outputStyle: 'compressed',
           sourcemap: 'none'
         },
         files:  [
