@@ -7,7 +7,7 @@ var _gaq = _gaq || [];
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 
-// use a tiny lib called baffle.js to obfuscating the text
+// use a tiny lib called baffle.js to obfuscate the text
 baffle('.main-title')
   .start()
   .set({
