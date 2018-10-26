@@ -36,12 +36,10 @@ module.exports = function (grunt) {
     connect: {
       server: {
         options: {
-          // keepalive: true,
           hostname: 'localhost',
           port: 4000,
           base: 'build/',
           livereload: true
-          // open: true
         }
       }
     },
@@ -140,18 +138,18 @@ module.exports = function (grunt) {
         env_remotedir,
         env_authkey;
 
-    if(target === 'dev'){
-      // dev env
-      env_authkey = 'dev';
-      env_host = hosts.dev.remoteurl;
-      env_remotedir = hosts.dev.remotedir;
-      console.log('Deploying to Dev Environment');
-    } else {
+    if(target === 'live'){
       // production env
       env_authkey = 'live';
       env_host = hosts.live.remoteurl;
       env_remotedir = hosts.live.remotedir;
-      console.log('Deploying to Live Environment');
+      console.info('Deploying to Live Environment');
+    } else {
+      // dev env
+      env_authkey = 'dev';
+      env_host = hosts.dev.remoteurl;
+      env_remotedir = hosts.dev.remotedir;
+      console.info('Deploying to Dev Environment');
     }
 
 
