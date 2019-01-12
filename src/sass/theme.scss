@@ -24,6 +24,9 @@ body {
   p {
     font-size: 1em;
     line-height: 1.3em;
+    &.blurb {
+      padding-bottom: 30px;
+    }
   }
 
   a {
@@ -67,7 +70,6 @@ body {
     }
 
     header {
-      // padding: 0 20px;
       grid-area: header;
       align-self: center;
       @include tablet {
@@ -77,7 +79,11 @@ body {
     }
 
     section {
+      overflow: auto;
       grid-area: links;
+      @include tablet {
+        overflow: visible;
+      }
       h2 {
         padding-left: 30px;
 
@@ -91,6 +97,7 @@ body {
     }
 
     footer {
+      background-color: $background;
       font-size: 0.7em;
       grid-area: footer;
       align-self: end;
