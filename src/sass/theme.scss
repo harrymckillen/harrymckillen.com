@@ -75,7 +75,10 @@ body {
       @include tablet {
         text-align: center;
       }
+    }
 
+    article, section, footer {
+      padding: 20px;
     }
 
     section {
@@ -83,26 +86,26 @@ body {
       grid-area: links;
       @include tablet {
         overflow: visible;
+        padding-top:0;
       }
-      h2 {
-        padding-left: 30px;
-
+      ul {
+        padding: 0;
       }
     }
 
     article {
       grid-area: main;
       align-self: center;
-      padding: 20px;
     }
+
 
     footer {
       background-color: $background;
       font-size: 0.7em;
       grid-area: footer;
       align-self: end;
-      padding: 20px;
     }
+
 
   }
 
