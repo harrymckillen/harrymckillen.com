@@ -25,11 +25,6 @@ function getCookie(name) {
   return '';
 }
 
-// binds to any element with the class theme-button
-var classname = document.getElementsByClassName('theme-button');
-for (var i = 0; i < classname.length; i++) {
-    classname[i].addEventListener('click', changeTheme, false);
-}
 
 // if a cookie exists, sets that style, if not, sets the default style
 function themeCookie() {
@@ -48,6 +43,11 @@ var changeTheme = function() {
     setCookie('theme', attribute, 30);
 };
 
+// binds to any element with the class theme-button
+var classname = document.getElementsByClassName('theme-button');
+for (var i = 0; i < classname.length; i++) {
+    classname[i].addEventListener('click', changeTheme, false);
+}
 
 // small function to provide simulated blinking for a cursor
 function blinker() {
