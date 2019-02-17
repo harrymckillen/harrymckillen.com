@@ -1,7 +1,6 @@
 @import 'components/variables';
 @import 'components/mixins';
 @import 'components/font';
-@import 'components/pixel-icons';
 
 body {
   margin: 0;
@@ -48,7 +47,27 @@ body {
     }
   }
 
-  // css grid
+  button {
+    overflow: hidden;
+    text-indent: -9999px;
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+
+    &[data-themeid="default"] {
+      border: 1px solid $foreground;
+      background-color: $background;
+    }
+    &[data-themeid="theme1"] {
+      border: 1px solid $theme1-foreground;
+      background-color: $theme1-background;
+    }
+    &[data-themeid="theme1alt"] {
+      border: 1px solid $theme1-alt-foreground;
+      background-color: $theme1-alt-background;
+    }
+  }
+  // css grid layout
   .grid {
     display: grid;
     height: 100vh;
@@ -100,16 +119,127 @@ body {
 
 
     footer {
-      background-color: $background;
       font-size: 0.7em;
       grid-area: footer;
       align-self: end;
     }
+  }
+
+  .icon-container {
+    width: $pixel-size*16;
+    height: $pixel-size*16;
+    display: inline-block;
+    padding-right:10px;
+  }
+
+  .face-container {
+    width: $pixel-size*75;
+    height: $pixel-size*75;
+    display: inline-block;
+    border: 2px solid $foreground;
+  }
+
+  .twitter-icon {
+    @include twitter-icon ($foreground);
+  }
+
+  .linkedin-icon {
+    @include linkedin-icon ($foreground);
+  }
+
+  .github-icon {
+    @include github-icon ($foreground);
+  }
+
+  .face {
+    width: $pixel-size;
+    height: $pixel-size;
+    font-family:monospace;
+    box-shadow: $pixel-size*1 $pixel-size*12 0 $foreground;
+  }
+
+  @include blinkingcursor ($foreground);
+
+  footer {
+    background-color: $background;
+  }
+
+  // text selection colours
+  ::-moz-selection{
+      color: $background;
+      background: $foreground;
+  }
+  ::selection {
+      color: $background;
+      background: $foreground;
+  }
 
 
+  // themes
+  &.theme1 {
+    background-color: $theme1-background;
+    color: $theme1-foreground;
+
+    a{
+      color: $theme1-foreground;
+    }
+    .twitter-icon {
+      @include twitter-icon ($theme1-foreground);
+    }
+    .linkedin-icon {
+      @include linkedin-icon ($theme1-foreground);
+    }
+    .github-icon {
+      @include github-icon ($theme1-foreground);
+    }
+    footer {
+      background-color: $theme1-background;
+    }
+
+    @include blinkingcursor ($theme1-foreground);
+
+    // text selection colours
+    ::-moz-selection{
+        color: $theme1-background;
+        background: $theme1-foreground;
+    }
+    ::selection {
+        color: $theme1-background;
+        background: $theme1-foreground;
+    }
+  }
+
+  &.theme1alt {
+    background-color: $theme1-alt-background;
+    color: $theme1-alt-foreground;
+
+    a{
+      color: $theme1-alt-foreground;
+    }
+    .twitter-icon {
+      @include twitter-icon ($theme1-alt-foreground);
+    }
+    .linkedin-icon {
+      @include linkedin-icon ($theme1-alt-foreground);
+    }
+    .github-icon {
+      @include github-icon ($theme1-alt-foreground);
+    }
+    footer {
+      background-color: $theme1-alt-background;
+    }
+
+    @include blinkingcursor ($theme1-alt-foreground);
+
+    // text selection colours
+    ::-moz-selection{
+        color: $theme1-alt-background;
+        background: $theme1-alt-foreground;
+    }
+    ::selection {
+        color: $theme1-alt-background;
+        background: $theme1-alt-foreground;
+    }
   }
 
 }
-
-@import 'components/animations';
-@import 'components/browser';
