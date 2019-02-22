@@ -1,3 +1,11 @@
+// defaults
+
+let themes = {
+  default: '#111',
+  theme1: '#00a',
+  theme1alt: '#ccc'
+};
+
 // js utils
 
 // basic cookie management
@@ -28,18 +36,22 @@ function getCookie(name) {
 
 // if a cookie exists, sets that style, if not, sets the default style
 function themeCookie() {
+  var themeColorMeta = document.querySelectorAll('[name="theme-color"]');
   var theme = getCookie('theme');
   if (theme != '') {
    document.querySelector('body').setAttribute('class', theme);
+   themeColorMeta[0].setAttribute('content', themes[theme]);
    var activeButton = document.querySelectorAll('[data-themeid="'+theme+'"]');
    activeButton[0].classList.add('active');
   } else {
+    themeColorMeta[0].setAttribute('content', themes.default);
     setCookie('theme', 'default', 30);
   }
 }
 
 // theme changer extraordinaire
 var changeTheme = function() {
+    var themeColorMeta = document.querySelectorAll('[name="theme-color"]');
     var theme = getCookie('theme');
     var attribute = this.getAttribute('data-themeid');
     var activeButton = document.getElementsByClassName('theme-button active');
@@ -50,6 +62,7 @@ var changeTheme = function() {
 
     this.setAttribute('class', 'theme-button active');
     document.querySelector('body').setAttribute('class', attribute);
+    themeColorMeta[0].setAttribute('content', themes[theme]);
     setCookie('theme', attribute, 30);
 };
 
