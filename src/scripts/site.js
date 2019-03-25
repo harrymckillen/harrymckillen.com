@@ -64,6 +64,9 @@ var changeTheme = function() {
     document.querySelector('body').setAttribute('class', attribute);
     themeColorMeta[0].setAttribute('content', themes[theme]);
     setCookie('theme', attribute, 30);
+
+    // total hack to try and fix the theme switcher
+    window.location.reload();
 };
 
 // binds to any element with the class theme-button
