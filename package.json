@@ -29,11 +29,12 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-pug": "^1.0.0",
-    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-uglify": "^3.4.0",
     "grunt-contrib-watch": "~1.1.0",
     "grunt-ftp-push": "~1.2.1",
     "grunt-processhtml": "^0.4.2",
-    "grunt-sass": "^2.1.0"
+    "grunt-sass": "^3.0.2",
+    "node-sass": "^4.12.0"
   },
   "homepage": "https://github.com/harrymckillen/harrymckillen.com",
   "dependencies": {

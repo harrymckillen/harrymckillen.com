@@ -2,6 +2,8 @@
     white */
 /* global
   grunt */
+const sass = require('node-sass');
+
 module.exports = function (grunt) {
   'use script';
 
@@ -18,7 +20,7 @@ module.exports = function (grunt) {
     sass: {
       build: {
         options: {
-          implementation: 'sass',
+          implementation: sass,
           outputStyle: 'compressed',
           sourcemap: 'none'
         },
