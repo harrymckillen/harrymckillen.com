@@ -39,12 +39,14 @@ function themeCookie() {
   var themeColorMeta = document.querySelectorAll('[name="theme-color"]');
   var theme = getCookie('theme');
   if (theme != '') {
-   document.querySelector('body').setAttribute('class', theme);
-   themeColorMeta[0].setAttribute('content', themes[theme]);
-   var activeButton = document.querySelectorAll('[data-themeid="'+theme+'"]');
-   activeButton[0].classList.add('active');
+    document.querySelector('body').setAttribute('class', theme);
+    themeColorMeta[0].setAttribute('content', themes[theme]);
+    var activeButton = document.querySelectorAll('[data-themeid="'+theme+'"]');
+    activeButton[0].classList.add('active');
   } else {
     themeColorMeta[0].setAttribute('content', themes.default);
+    var activeButton = document.querySelectorAll('[data-themeid="default"]');
+    activeButton[0].classList.add('active');
     setCookie('theme', 'default', 30);
   }
 }
