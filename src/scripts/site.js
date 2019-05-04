@@ -117,3 +117,8 @@ themeCookie();
 
 // run the blinking function
 blinker();
+
+console.log(
+  '%c Hey, thanks for checking out my site. If you want to see more code of mine, please see: https://github.com/harrymckillen',
+  'background: #111; color: #0f0; font-size: 20px; fontfont-family: monospace;'
+  );
