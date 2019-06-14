@@ -67,7 +67,9 @@ var changeTheme = function() {
     themeColorMeta[0].setAttribute('content', themes[theme]);
     setCookie('theme', attribute, 30);
 
-    // total hack to try and fix the theme switcher
+    // total hack to try and fix the theme switcher, as
+    // on Android, a change to the theme-color meta data,
+    // does not trigger a colour change
     window.location.reload();
 };
 

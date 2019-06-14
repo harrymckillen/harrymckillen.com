@@ -2,6 +2,8 @@
   Interested to see how this was made?
   Checkout this on github, all the code is there.
   https://github.com/harrymckillen/harrymckillen.com
+  I wanted to use CSS Grid, so I build this new very
+  basic version of my site.
 
 doctype html
 
@@ -18,9 +20,11 @@ html(lang="en" dir="ltr")
     meta(charset="utf-8")
     title Harry McKillen
 
-  body
+  body(itemscope itemtype="http://schema.org/Person")
     div.grid
       header
+        div.coffee-container
+          div.coffee-mug &nbsp;
         h1.main-title Harry McKillen
 
       section
@@ -40,21 +44,21 @@ html(lang="en" dir="ltr")
               div(class="github-icon") &nbsp;
 
       article
-        //- div.face-container
-        //-   div.face
+        //- div.face-container #[div(class="face")]
 
-        p.blurb My name is #[span(itemscope itemprop="author" itemtype="http://schema.org/Person") #[meta(itemprop="description" content="I currently work for Aer Lingus as a UI Team Lead.")] #[span(itemprop="name") Harry], I am a #[span(itemprop="jobtitle") Web Developer]]  by profession. Front-end Team Lead for #[a(href="https://www.aerlingus.com" target="_blank") Aer Lingus]. Wannabe Games Developer. Love bingewatching TV series, not so much Movies any more (lack the time to watch them in a single sitting). More recently listening to various podcasts/talkshows on a variety of topics; Sports, Current Affairs, History &amp; loads of other stuff. And lastly, I'm someone's Dad.#[span(class="blinking-cursor") &nbsp;]
+        p My name is #[span(itemprop="name") Harry McKillen], I am a #[span(itemprop="jobtitle") Front-end Team Lead] / Developer for #[a(href="https://www.aerlingus.com" target="_blank" itemscope itemtype="http://schema.org/Organization" itemprop="worksfor") #[span(itemprop="name") Aer Lingus]]. Wannabe Games Developer.
+        p.blurb #[span(class="sml-icon-container") #[i(class="heart-icon")]] TV/Movies/Going to the Cinema. #[span(class="sml-icon-container") #[i(class="heart-icon")]] Podcasts. #[span(class="sml-icon-container") #[i(class="heart-icon")]] Books, both Fiction and Non-Fiction. #[span(class="sml-icon-container") #[i(class="heart-icon")]] #[span(class="sml-icon-container") #[i(class="heart-icon")]]  #[span(class="sml-icon-container") #[i(class="heart-icon")]]  Coffee. And lastly, I'm someone's Dad. #[span(class="blinking-cursor") &nbsp;]
 
         h2 Skillset
 
-        p Javascript / AngularJS / Angular / NodeJS / HTML / CSS
+        p Javascript / AngularJS / Angular / Node.js / HTML / CSS / Linux
 
       footer
         div Theme:
           button(class="theme-button" data-themeid="default" aria-label="Default") &nbsp;
           button(class="theme-button" data-themeid="theme1" aria-label="Blue") &nbsp;
           button(class="theme-button" data-themeid="theme1alt" aria-label="Grey") &nbsp;
-        p (c) Harry McKillen, 2018
+        p (c) Harry McKillen, 2019
 
-    script(type="text/javascript" src="/scripts/baffle.js")
-    script(type="text/javascript" src="/scripts/site.js")
+    script(src="/scripts/baffle.js")
+    script(src="/scripts/site.js")
