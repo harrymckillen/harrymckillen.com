@@ -70,19 +70,6 @@ module.exports = function (grunt) {
       options: { livereload: true },
       files: ['src/**/*.pug', 'src/**/*.js', 'src/**/*.scss'],
       tasks: ['build']
-    },
-    processhtml: {
-      build: {
-        options: {
-          process: true,
-          data: {
-            sitetitle: 'Harry McKillen'
-          }
-        },
-        files: [
-          {expand: true, cwd: 'build/', src: ['*.html'], dest: 'build/'}
-        ]
-      }
     }
   });
 
@@ -93,7 +80,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-ftp-push');
   grunt.loadNpmTasks('grunt-contrib-pug');
 
