@@ -22,18 +22,22 @@
     "url": "https://github.com/harrymckillen/harrymckillen.com/issues"
   },
   "devDependencies": {
+    "autoprefixer": "^9.8.0",
     "grunt": "^1.1.0",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-concat": "~1.0.1",
     "grunt-contrib-connect": "^2.1.0",
     "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-pug": "^2.0.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "~1.1.0",
     "grunt-ftp-push": "~1.2.1",
+    "grunt-postcss": "^0.9.0",
     "grunt-sass": "^3.1.0",
-    "node-sass": "^4.14.1"
+    "node-sass": "^4.14.1",
+    "tailwindcss": "^1.4.6"
   },
   "homepage": "https://github.com/harrymckillen/harrymckillen.com",
   "dependencies": {
