@@ -2,15 +2,16 @@
   Interested to see how this was made?
   Checkout this on github, all the code is there.
   https://github.com/harrymckillen/harrymckillen.com
-  I wanted to use CSS Grid, so I build this new very
-  basic version of my site.
+  I wanted to use CSS Grid, so I built this new, very
+  basic, version of my site.
 
 doctype html
 
 html(lang="en" dir="ltr")
 
   head
-    link(rel="stylesheet" href="/css/theme.css")
+    link(href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="/css/output.css")
 
     meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -20,45 +21,36 @@ html(lang="en" dir="ltr")
     meta(charset="utf-8")
     title Harry McKillen
 
-  body(itemscope itemtype="http://schema.org/Person")
-    div.grid
-      header
-        div.coffee-container
-          div.coffee-mug &nbsp;
-        h1.main-title Harry McKillen
+  body(itemscope itemtype="http://schema.org/Person").h-full.w-full.bg-cover
 
-      section
-        h2 Connect
-        ul
-          li
-            a(href="https://twitter.com/_hmck" target="_blank") Twitter
-            div(class="icon-container")
-              div(class="twitter-icon") &nbsp;
-          li
-            a(href="http://www.linkedin.com/in/harrymckillen" target="_blank") LinkedIn
-            div(class="icon-container")
-              div(class="linkedin-icon") &nbsp;
-          li
-            a(href="https://github.com/harrymckillen" target="_blank") GitHub
-            div(class="icon-container")
-              div(class="github-icon") &nbsp;
+    main.terminal(class="w-11/12 md:w-7/12 mx-auto my-8 rounded-t-md shadow-deep")
 
-      article
-        //- div.face-container #[div(class="face")]
+      div.window-border.border-b-2.border-gray-800.p-2.bg-gray-800.flex.flex-row-reverse.rounded-t-md
+        div.bg-red-600.w-3.h-3.rounded-full.mr-2
+        div.bg-yellow-500.w-3.h-3.rounded-full.mr-2
+        div.bg-green-500.w-3.h-3.rounded-full.mr-2
 
-        p My name is #[span(itemprop="name") Harry McKillen], I am a #[span(itemprop="jobtitle") Front-end Team Lead] / Developer for #[a(href="https://www.aerlingus.com" target="_blank" itemscope itemtype="http://schema.org/Organization" itemprop="worksfor") #[span(itemprop="name") Aer Lingus]]. Wannabe Games Developer.
-        p.blurb #[span(class="sml-icon-container") #[i(class="heart-icon")]] TV/Movies/Going to the Cinema. #[span(class="sml-icon-container") #[i(class="heart-icon")]] Podcasts. #[span(class="sml-icon-container") #[i(class="heart-icon")]] Books, both Fiction and Non-Fiction. #[span(class="sml-icon-container") #[i(class="heart-icon")]] #[span(class="sml-icon-container") #[i(class="heart-icon")]]  #[span(class="sml-icon-container") #[i(class="heart-icon")]]  Coffee. And lastly, I'm someone's Dad. #[span(class="blinking-cursor") &nbsp;]
+      div#console.commands.bg-opacity-75.bg-gray-900.px-2.py-3.min-h-screen
 
-        h2 Skillset
+        div.text-gray-100.text-center
 
-        p Javascript / AngularJS / Angular / Node.js / HTML / CSS / Linux
+          pre ##########################################################
+          pre #                     Harry McKillen                     #
+          pre #              ~~ No Unauthorised Access ~~              #
+          pre #     Type 'help' for a list of commands to help you     #
+          pre #     navigate around the site                           #
+          pre ##########################################################
 
-      footer
-        div Theme:
-          button(class="theme-button" data-themeid="default" aria-label="Default") &nbsp;
-          button(class="theme-button" data-themeid="theme1" aria-label="Blue") &nbsp;
-          button(class="theme-button" data-themeid="theme1alt" aria-label="Grey") &nbsp;
-        p (c) Harry McKillen, 2019
+        p(v-for="cmd in pastCmds")
+          span.text-brightgreen guest@harrymckillen.com $&nbsp;
+          span.text-gray-100 {{ cmd.text }}
 
-    script(src="/scripts/baffle.js")
-    script(src="/scripts/site.js")
+        p
+          span.text-brightgreen guest@harrymckillen.com $&nbsp;
+          span.text-gray-100 #[input(v-model="cli" ref="cli" class="w-5 bg-transparent focus:border-gray-100 focus:border-solid focus:border")] #[button(v-on:click="runCmd(cli)").bg-white.rounded-md.px-4.text-black Run Command] #[span.blinking-cursor &nbsp;]
+
+    footer(class="flex")
+      p.w-full.text-center.p-4 (c) Harry McKillen, 2019
+
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    script(src="/scripts/site.js" type="module")
