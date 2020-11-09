@@ -1,39 +1,61 @@
 @import 'components/variables';
+@import 'components/mixins';
 
 body {
   font-family: $mono-font;
+
+  h1, h2, h3 {
+    &:before{
+      content: "{";
+      padding-right: 0.5rem;
+    }
+    &:after{
+      content: "}";
+      padding-left: 0.5rem;
+    }
+  }
+
+  h1 {
+    text-shadow: 1px 1px $amber,
+      2px 2px $black,
+      3px 3px $black;
+  }
 
   pre {
     font-family: $mono-font;
   }
 
-  input:focus {
-    background-color: #f7fafc;
-    color: #333;
+  .double-angled-right {
+    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+
+    @include tablet {
+      clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+    }
   }
 
-  background: url('/images/dunamaise-superwide.JPG') no-repeat center center fixed;
+  .top-angled-left {
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
 
-  .blinking-cursor {
-    width: 10px;
-    height: 100%;
-    font-family: monospace;
+    @include tablet {
+      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+    }
+  }
+
+  .icon-container {
+    font-size: $pixel-size*2;
+    width: $pixel-size*16;
+    height: $pixel-size*16;
     display: inline-block;
-
-    &.show {
-      background-color: #eee;
-    }
   }
 
-  .terminal {
-
-    .window-border {
-    }
-
-    .commands {
-      max-height: 400px;
-      min-height: 200px;
-      overflow-y: auto;
-    }
+  .twitter-icon {
+    @include twitter-icon ($amber);
   }
+  .linkedin-icon {
+    @include linkedin-icon ($amber);
+  }
+  .github-icon {
+    @include github-icon ($amber);
+  }
+
 }

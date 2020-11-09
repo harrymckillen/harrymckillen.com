@@ -17,9 +17,7 @@ module.exports = function (grunt) {
             expand: true,
             cwd: 'src/',
             src: [
-              'fonts/**',
               'scripts/**',
-              'images/**',
               '*.txt',
               'favicon.ico'
             ],
@@ -68,7 +66,6 @@ module.exports = function (grunt) {
           roundingPrecision: -1
         },
         files: {
-          // 'build/css/output.css': ['build/css-temp/tw.purged.css', 'build/css-temp/theme.css']
           'build/css/output.css': ['build/css-temp/tw.css', 'build/css-temp/theme.css']
         }
       }
@@ -199,36 +196,24 @@ module.exports = function (grunt) {
     grunt.initConfig({
       ftp_push: {
         options: {
-          incrementalUpdates: true,
+          incrementalUpdates: false,
           authKey: env_authkey,
           host: env_host,
           dest: env_remotedir,
           port: 21,
-          debug: false
+          debug: true
         },
         full: {
           files: [
-            {expand: true, cwd: 'build', src: ['**/*', '.htaccess']},
-            {expand: true, cwd: 'build', src: ['fonts/**/*']}
-          ]
-        },
-        fonts: {
-          files: [
-            {expand: true, cwd: 'build', src: ['fonts/**/*']}
+            {expand: true, cwd: 'build', src: ['**/*', '.htaccess']}
           ]
         }
       }
     });
 
-    if(grunt.option('fonts')){
-      grunt.task.run([
-        'ftp_push:fonts'
-      ]);
-    } else {
-      grunt.task.run([
-        'ftp_push:full'
-      ]);
-    }
+    grunt.task.run([
+      'ftp_push:full'
+    ]);
 
   });
 };
