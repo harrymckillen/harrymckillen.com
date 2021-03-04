@@ -3,6 +3,7 @@
 
 body {
   font-family: $mono-font;
+  scroll-snap-type: y mandatory;
 
   h1, h2, h3 {
     &:before{
@@ -23,6 +24,10 @@ body {
 
   pre {
     font-family: $mono-font;
+  }
+
+  .anchor {
+    scroll-snap-align: start;
   }
 
   .double-angled-right {
