@@ -21,36 +21,53 @@ html(lang="en" dir="ltr")
     meta(charset="utf-8")
     title Harry McKillen
 
-  body(itemscope itemtype="http://schema.org/Person").h-full.w-full.bg-cover
+  body(itemscope itemtype="http://schema.org/Person" class="h-full w-full bg-amber")
 
-    main.terminal(class="w-11/12 md:w-7/12 mx-auto my-8 rounded-t-md shadow-deep")
+    section
+      nav(class="flex items-center justify-around h-16 w-full sm:w-2/3 mx-auto text-xl")
+        a(href="#about") About
+        a(href="#skills") Skills
+        a(href="#contact") Contact
 
-      div.window-border.border-b-2.border-gray-800.p-2.bg-gray-800.flex.flex-row-reverse.rounded-t-md
-        div.bg-red-600.w-3.h-3.rounded-full.mr-2
-        div.bg-yellow-500.w-3.h-3.rounded-full.mr-2
-        div.bg-green-500.w-3.h-3.rounded-full.mr-2
+      header(class="sm:h-64 h-auto flex items-center text-center")
+        section.w-full
+          h1(class="text-4xl sm:text-6xl font-extrabold tracking-widest") Harry McKillen
+          h2(class="w-2/3 sm:w-full mx-auto px-4 my-3") Web Developer / Senior Front-end Developer / Team Lead
+    section#about(class="bg-black text-white p-4 double-angled-right")
+      main(class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto my-12 md:mt-16 md:mb-20")
+        h3(class="text-2xl sm:text-4xl mb-2") About
+        p(class="text-xl sm:text-2xl") Kilkenny-born Web Developer. Have 19+ years developing with a variety of Web Technologies. BSc. in Computer Science. Currently a UI Development Team Lead with Aer Lingus.
 
-      div#console.commands.bg-opacity-75.bg-gray-900.px-2.py-3.min-h-screen
 
-        div.text-gray-100.text-center
+    section#skills(class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto my-8 md:mt-10 ")
+      h3(class="text-2xl sm:text-4xl mb-2") Skills
+      p(class="text-xl sm:text-2xl")
+        | &middot; Javascript; ES5/6, Angular/AngularJS/VueJS/NodeJS (numerous other libraries)
+        | &middot; HTML5; Pug (formerly Jade)
+        | &middot; CSS3; Good knowledge of modern features, such as Flexbox, CSS Grid, Basic Animations. Experience using Bootstrap, Tailwind CSS etc.
 
-          pre ##########################################################
-          pre #                     Harry McKillen                     #
-          pre #              ~~ No Unauthorised Access ~~              #
-          pre #     Type 'help' for a list of commands to help you     #
-          pre #     navigate around the site                           #
-          pre ##########################################################
 
-        p(v-for="cmd in pastCmds")
-          span.text-brightgreen guest@harrymckillen.com $&nbsp;
-          span.text-gray-100 {{ cmd.text }}
 
-        p
-          span.text-brightgreen guest@harrymckillen.com $&nbsp;
-          span.text-gray-100 #[input(v-model="cli" ref="cli" class="w-5 bg-transparent focus:border-gray-100 focus:border-solid focus:border")] #[button(v-on:click="runCmd(cli)").bg-white.rounded-md.px-4.text-black Run Command] #[span.blinking-cursor &nbsp;]
+    footer#contact(class="bg-black text-white top-angled-left float-left w-full")
 
-    footer(class="flex")
-      p.w-full.text-center.p-4 (c) Harry McKillen, 2019
+      section(class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto mt-12 md:mt-16")
+        h3(class="text-2xl sm:text-4xl mb-2") Contact
+        p(class="text-xl sm:text-2xl") Feel free to reach out to me at #[a(class="underline" href="mailto:hi@harrymckillen.com") hi@harrymckillen.com]
+        p.my-4 or via
+      section(class="w-2/3 md:w-1/4 mx-auto flex justify-between mt-4 mb-6 text-left")
 
-    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+        a(href="https://twitter.com/_hmck" target="_blank")
+          span.icon-container
+            span.twitter-icon &nbsp;
+
+        a(href="http://www.linkedin.com/in/harrymckillen" target="_blank")
+          span.icon-container
+            span.linkedin-icon &nbsp;
+
+        a(href="https://github.com/harrymckillen" target="_blank")
+          span.icon-container
+            span.github-icon &nbsp;
+
+      p(class="w-full text-center mt-4 p-4") &copy; Harry McKillen, 2020. Cill Chainnigh Abú.
+
     script(src="/scripts/site.js" type="module")
