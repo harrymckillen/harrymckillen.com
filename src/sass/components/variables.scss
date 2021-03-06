@@ -1,8 +1,6 @@
 // global variables
-//
-// -- default colours
-$background: #111;
-$foreground: #0f0;
+
+$mono-font: 'Inconsolata', monospace;
 
 // -- breakpoints
 $superwide: 1201px;
@@ -10,12 +8,7 @@ $desktop: 1200px;
 $tablet: 900px;
 $mobile: 500px;
 
-$pixel-size:2px;
+$pixel-size: 4px;
 
-// -- theme 1
-$theme1-background: #00a;
-$theme1-foreground: #ccc;
-
-// -- theme 1 alt
-$theme1-alt-background: #ccc;
-$theme1-alt-foreground: #00a;
+$amber: #FFBF00;
+$black: #000;

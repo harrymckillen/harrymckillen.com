@@ -1,366 +1,66 @@
 @import 'components/variables';
 @import 'components/mixins';
-@import 'components/font';
 
 body {
-  margin: 0;
-  background-color: $background;
-  color: $foreground;
-  font-family: 'dosvga', serif;
-  font-size: 21px;
+  font-family: $mono-font;
+  scroll-snap-type: y mandatory;
 
-  @include superwide {
-      font-size: 28px;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: normal;
-    &::before { content: '<'; }
-    &::after { content: '>'; }
+  h1, h2, h3 {
+    &:before{
+      content: "{";
+      padding-right: 0.5rem;
+    }
+    &:after{
+      content: "}";
+      padding-left: 0.5rem;
+    }
   }
 
   h1 {
-    padding: 0 0.35em;
-    font-size: 2.2em;
+    text-shadow: 1px 1px $amber,
+      2px 2px $black,
+      3px 3px $black;
   }
 
-  p {
-    font-size: 1em;
-    line-height: 1.3em;
-
-    &.blurb {
-      padding-bottom: 30px;
-    }
+  pre {
+    font-family: $mono-font;
   }
 
-  a {
-    color: $foreground;
-    &::before { content: '['; }
-    &::after { content: '^]'; }
+  .anchor {
+    scroll-snap-align: start;
   }
 
-  ul{
-    li{
-        margin: 0;
-        padding: 5px;
-        list-style-type: none;
-        line-height: 32px;
-        &:before{
-            content: "\002a";
-            padding-right: 10px;
-        }
-    }
-  }
-
-  button {
-    overflow: hidden;
-    height: 20px;
-    width: 20px;
-    text-align: center;
-    line-height: 20px;
-    margin-left: 10px;
-    font-family: 'dosvga', serif;
-    padding: 0;
-    font-size: 1.3em;
-
-    &.active::before{
-      content: "\2022";
-      padding-left: 4px;
-    }
-
-    &[data-themeid="default"] {
-      border: 1px solid $foreground;
-      background-color: $background;
-      color: $foreground;
-
-    }
-
-    &[data-themeid="theme1"] {
-      border: 1px solid $theme1-foreground;
-      color: $theme1-foreground;
-      background-color: $theme1-background;
-    }
-
-    &[data-themeid="theme1alt"] {
-      border: 1px solid $theme1-alt-foreground;
-      color: $theme1-alt-foreground;
-      background-color: $theme1-alt-background;
-    }
-  }
-  // css grid layout
-  .grid {
-    display: grid;
-    height: 100vh;
-    grid-template-areas:
-     "header header"
-     "main links"
-     "main footer ";
-
-    @include superwide {
-      grid-template-columns: 75% 25%;
-      grid-template-rows: 20% 70% 10%;
-    }
-
-    @include desktop {
-      grid-template-columns: 70% 30%;
-      grid-template-rows: 20% 70% 10%;
-    }
+  .double-angled-right {
+    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
 
     @include tablet {
-      grid-template-columns: 60% 40%;
-      grid-template-rows: auto;
-      grid-template-areas:
-     "header header"
-     "main main"
-     "links links"
-     "footer footer";
+      clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
     }
+  }
 
-    header {
-      grid-area: header;
-      align-self: center;
-      .coffee-container{
-        margin: 15px 0 0 10px;
-        .coffee-mug {
-          margin-left: -20px;
-        }
-      }
+  .top-angled-left {
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
 
-      @include superwide {
-        .main-title, .coffee-container{
-          float: left;
-          display: block;
-        }
-        .coffee-container{
-          margin: 30px 0 0 40px;
-        }
-      }
-
-      @include desktop {
-        .main-title, .coffee-container{
-          float: left;
-          display: block;
-        }
-        .coffee-container{
-          margin: 15px 0 0 40px;
-        }
-      }
-
-      @include tablet {
-        text-align: center;
-        .main-title, .coffee-container{
-          float: none;
-        }
-
-         .coffee-container{
-          margin: 20px auto 0 auto;
-        }
-      }
-    }
-
-    article, section, footer {
-      padding: 0 20px;
-    }
-
-    section {
-      overflow: auto;
-      grid-area: links;
-      h2 {
-        text-align: right;
-      }
-      ul {
-        padding: 0;
-        text-align: right;
-      }
-      @include tablet {
-        overflow: visible;
-        padding-top: 0;
-        h2 {
-          text-align: left;
-        }
-        ul {
-          text-align: left;
-        }
-      }
-    }
-
-    article {
-      grid-area: main;
-    }
-
-    footer {
-      font-size: 0.7em;
-      grid-area: footer;
-      text-align: right;
-      align-self: end;
-      @include tablet {
-        text-align: left;
-      }
+    @include tablet {
+      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
     }
   }
 
   .icon-container {
+    font-size: $pixel-size*2;
     width: $pixel-size*16;
     height: $pixel-size*16;
-    display: inline-block;
-    padding:0 10px;
-  }
-
-  .sml-icon-container {
-    width: $pixel-size*9;
-    height: $pixel-size*9;
-    display: inline-block;
-  }
-
-  .coffee-container {
-    width: $pixel-size*32;
-    height: $pixel-size*32;
-    display: inline-block;
-  }
-
-  .face-container {
-    width: $pixel-size*75;
-    height: $pixel-size*75;
     display: inline-block;
   }
 
   .twitter-icon {
-    @include twitter-icon ($foreground);
+    @include twitter-icon ($amber);
   }
-
   .linkedin-icon {
-    @include linkedin-icon ($foreground);
+    @include linkedin-icon ($amber);
   }
-
   .github-icon {
-    @include github-icon ($foreground);
-  }
-
-  .coffee-mug {
-    @include coffee-mug ($foreground);
-  }
-
-  .heart-icon {
-    @include heart ($foreground);
-  }
-
-  .face {
-    width: $pixel-size;
-    height: $pixel-size;
-    font-family:monospace;
-    box-shadow:
-      $pixel-size*1 $pixel-size*12 0 $foreground,
-      $pixel-size*1 $pixel-size*13 0 $foreground,
-      $pixel-size*1 $pixel-size*14 0 $foreground,
-      ;
-  }
-
-  @include blinkingcursor ($foreground);
-
-  footer {
-    background-color: $background;
-  }
-
-  // text selection colours
-  ::-moz-selection{
-      color: $background;
-      background: $foreground;
-  }
-  ::selection {
-      color: $background;
-      background: $foreground;
-  }
-
-
-  // themes
-  &.theme1 {
-    background-color: $theme1-background;
-    color: $theme1-foreground;
-
-    a{
-      color: $theme1-foreground;
-    }
-
-    .twitter-icon {
-      @include twitter-icon ($theme1-foreground);
-    }
-
-    .linkedin-icon {
-      @include linkedin-icon ($theme1-foreground);
-    }
-
-    .github-icon {
-      @include github-icon ($theme1-foreground);
-    }
-
-    .coffee-mug {
-      @include coffee-mug ($theme1-foreground);
-    }
-
-    .heart-icon {
-      @include heart ($theme1-foreground);
-    }
-
-    footer {
-      background-color: $theme1-background;
-    }
-
-    @include blinkingcursor ($theme1-foreground);
-
-    // text selection colours
-    ::-moz-selection{
-        color: $theme1-background;
-        background: $theme1-foreground;
-    }
-    ::selection {
-        color: $theme1-background;
-        background: $theme1-foreground;
-    }
-  }
-
-  &.theme1alt {
-    background-color: $theme1-alt-background;
-    color: $theme1-alt-foreground;
-
-    a{
-      color: $theme1-alt-foreground;
-    }
-
-    .twitter-icon {
-      @include twitter-icon ($theme1-alt-foreground);
-    }
-
-    .linkedin-icon {
-      @include linkedin-icon ($theme1-alt-foreground);
-    }
-
-    .github-icon {
-      @include github-icon ($theme1-alt-foreground);
-    }
-
-    .coffee-mug {
-      @include coffee-mug ($theme1-alt-foreground);
-    }
-
-    .heart-icon {
-      @include heart ($theme1-alt-foreground);
-    }
-
-    footer {
-      background-color: $theme1-alt-background;
-    }
-
-    @include blinkingcursor ($theme1-alt-foreground);
-
-    // text selection colours
-    ::-moz-selection{
-        color: $theme1-alt-background;
-        background: $theme1-alt-foreground;
-    }
-    ::selection {
-        color: $theme1-alt-background;
-        background: $theme1-alt-foreground;
-    }
+    @include github-icon ($amber);
   }
 
 }

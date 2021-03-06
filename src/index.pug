@@ -2,15 +2,14 @@
   Interested to see how this was made?
   Checkout this on github, all the code is there.
   https://github.com/harrymckillen/harrymckillen.com
-  I wanted to use CSS Grid, so I build this new very
-  basic version of my site.
 
 doctype html
 
 html(lang="en" dir="ltr")
 
   head
-    link(rel="stylesheet" href="/css/theme.css")
+    link(href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="/css/output.css")
 
     meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -20,45 +19,67 @@ html(lang="en" dir="ltr")
     meta(charset="utf-8")
     title Harry McKillen
 
-  body(itemscope itemtype="http://schema.org/Person")
-    div.grid
-      header
-        div.coffee-container
-          div.coffee-mug &nbsp;
-        h1.main-title Harry McKillen
+  body(itemscope itemtype="http://schema.org/Person" class="h-full w-full bg-amber")
 
-      section
-        h2 Connect
-        ul
-          li
-            a(href="https://twitter.com/_hmck" target="_blank") Twitter
-            div(class="icon-container")
-              div(class="twitter-icon") &nbsp;
-          li
-            a(href="http://www.linkedin.com/in/harrymckillen" target="_blank") LinkedIn
-            div(class="icon-container")
-              div(class="linkedin-icon") &nbsp;
-          li
-            a(href="https://github.com/harrymckillen" target="_blank") GitHub
-            div(class="icon-container")
-              div(class="github-icon") &nbsp;
+    section
 
-      article
-        //- div.face-container #[div(class="face")]
+      nav(class="flex items-center justify-around h-16 w-full sm:w-2/3 mx-auto text-xl")
+        a(href="#about") About
+        a(href="#skills") Skills
+        a(href="#contact") Contact
 
-        p My name is #[span(itemprop="name") Harry McKillen], I am a #[span(itemprop="jobtitle") Front-end Team Lead] / Developer for #[a(href="https://www.aerlingus.com" target="_blank" itemscope itemtype="http://schema.org/Organization" itemprop="worksfor") #[span(itemprop="name") Aer Lingus]]. Wannabe Games Developer.
-        p.blurb #[span(class="sml-icon-container") #[i(class="heart-icon")]] TV/Movies/Going to the Cinema. #[span(class="sml-icon-container") #[i(class="heart-icon")]] Podcasts. #[span(class="sml-icon-container") #[i(class="heart-icon")]] Books, both Fiction and Non-Fiction. #[span(class="sml-icon-container") #[i(class="heart-icon")]] #[span(class="sml-icon-container") #[i(class="heart-icon")]]  #[span(class="sml-icon-container") #[i(class="heart-icon")]]  Coffee. And lastly, I'm someone's Dad. #[span(class="blinking-cursor") &nbsp;]
+      header(class="sm:h-64 h-auto flex items-center text-center")
 
-        h2 Skillset
+        section.w-full
 
-        p Javascript / AngularJS / Angular / Node.js / HTML / CSS / Linux
+          h1(class="text-4xl sm:text-6xl font-extrabold tracking-widest") Harry McKillen
 
-      footer
-        div Theme:
-          button(class="theme-button" data-themeid="default" aria-label="Default") &nbsp;
-          button(class="theme-button" data-themeid="theme1" aria-label="Blue") &nbsp;
-          button(class="theme-button" data-themeid="theme1alt" aria-label="Grey") &nbsp;
-        p (c) Harry McKillen, 2019
+          h2(class="w-2/3 sm:w-full mx-auto px-4 my-3") Web Developer / Senior Front-end Developer / Team Lead / UI Architect
 
-    script(src="/scripts/baffle.js")
-    script(src="/scripts/site.js")
+    section#about(class="bg-black text-white p-4 double-angled-right anchor")
+
+      main(class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto my-12 md:mt-16 md:mb-20")
+
+        h3(class="text-2xl sm:text-4xl mb-2") About
+
+        p(class="text-xl sm:text-2xl") Kilkenny-born Web Developer. Have 19+ years developing with a variety of Web Technologies. BSc. in Computer Science. Currently a UI Software Architect with Aer Lingus.
+
+
+    section#skills(class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto my-8 md:mt-10 anchor")
+
+      h3(class="text-2xl sm:text-4xl mb-2") Skills
+
+      p(class="text-xl sm:text-2xl")
+        | &middot; Javascript; ES5/6, Angular / AngularJS / VueJS / NodeJS (numerous other libraries)
+        | &middot; HTML5; Pug (formerly Jade)
+        | &middot; CSS3; Good knowledge of modern features, such as Flexbox, CSS Grid, Basic Animations. Experience using Bootstrap, Tailwind CSS etc.
+
+
+
+    footer#contact(class="bg-black text-white top-angled-left float-left w-full anchor")
+
+      section(class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto mt-12 md:mt-16")
+
+        h3(class="text-2xl sm:text-4xl mb-2") Contact
+
+        p(class="text-xl sm:text-2xl") Feel free to reach out to me at #[a(class="underline" href="mailto:hi@harrymckillen.com") hi@harrymckillen.com]
+
+        p.my-4 or via
+
+      section(class="w-2/3 md:w-1/4 mx-auto flex justify-between mt-4 mb-6 text-left")
+
+        a(href="https://twitter.com/_hmck" target="_blank")
+          span.icon-container
+            span.twitter-icon &nbsp;
+
+        a(href="http://www.linkedin.com/in/harrymckillen" target="_blank")
+          span.icon-container
+            span.linkedin-icon &nbsp;
+
+        a(href="https://github.com/harrymckillen" target="_blank")
+          span.icon-container
+            span.github-icon &nbsp;
+
+      p(class="w-full text-center mt-4 p-4") &copy; Harry McKillen, 2020. Cill Chainnigh Abú.
+
+    script(src="/scripts/site.js" type="module")

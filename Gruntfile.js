@@ -13,8 +13,32 @@ module.exports = function (grunt) {
     copy: {
       build: {
         files: [
-          {expand: true, cwd: 'src/', src: ['fonts/**', 'scripts/**', '*.txt', 'favicon.ico'], dest: 'build/'}
+          {
+            expand: true,
+            cwd: 'src/',
+            src: [
+              'scripts/**',
+              '*.txt',
+              'favicon.ico'
+            ],
+            dest: 'build/'
+          }
         ]
+      }
+    },
+    postcss: {
+      options: {
+        map: true, // inline sourcemaps
+        processors: [
+          require('tailwindcss')()
+        ]
+      },
+      dist: {
+        expand: true,
+        cwd: 'src/sass/',
+        src: ['tw.css'],
+        dest: 'build/css-temp/',
+        ext: '.css'
       }
     },
     sass: {
@@ -29,10 +53,21 @@ module.exports = function (grunt) {
             expand: true,
             cwd: 'src/sass',
             src: ['**/*.scss', "!libs/*.scss", "!components/*.scss"],
-            dest: 'build/css',
+            dest: 'build/css-temp',
             ext: '.css'
           }
         ]
+      }
+    },
+    cssmin: {
+      build: {
+        options: {
+          mergeIntoShorthands: false,
+          roundingPrecision: -1
+        },
+        files: {
+          'build/css/output.css': ['build/css-temp/tw.css', 'build/css-temp/theme.css']
+        }
       }
     },
     connect: {
@@ -64,6 +99,9 @@ module.exports = function (grunt) {
     clean: {
       build: {
         src: ['build/']
+      },
+      cssTemp: {
+        src: ['build/css-temp']
       }
     },
     watch: {
@@ -80,25 +118,39 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-ftp-push');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-pug');
+  grunt.loadNpmTasks('grunt-postcss')
+  grunt.loadNpmTasks('grunt-ftp-push');
 
   // Registered Tasks
   grunt.registerTask('build',
     [
       'clean:build',
-      'sass:build',
       'copy:build',
-      'pug:build'
+      'pug:build',
+      'buildCSS'
     ]);
+
   grunt.registerTask('wipe',
     [
       'clean:build'
     ]);
+
   grunt.registerTask('default',
     [
       'build'
     ]);
+
+  grunt.registerTask('buildCSS',
+    [
+      'postcss'
+      ,'sass:build'
+      ,'cssmin:build'
+      ,'clean:cssTemp'
+    ]
+  )
+
   grunt.registerTask('serve', 'Serve the file from connect, or local apache', function (){
 
     if(grunt.option('local')){
@@ -144,36 +196,24 @@ module.exports = function (grunt) {
     grunt.initConfig({
       ftp_push: {
         options: {
-          incrementalUpdates: true,
+          incrementalUpdates: false,
           authKey: env_authkey,
           host: env_host,
           dest: env_remotedir,
           port: 21,
-          debug: false
+          debug: true
         },
         full: {
           files: [
-            {expand: true, cwd: 'build', src: ['**/*', '.htaccess']},
-            {expand: true, cwd: 'build', src: ['fonts/**/*']}
-          ]
-        },
-        fonts: {
-          files: [
-            {expand: true, cwd: 'build', src: ['fonts/**/*']}
+            {expand: true, cwd: 'build', src: ['**/*', '.htaccess']}
           ]
         }
       }
     });
 
-    if(grunt.option('fonts')){
-      grunt.task.run([
-        'ftp_push:fonts'
-      ]);
-    } else {
-      grunt.task.run([
-        'ftp_push:full'
-      ]);
-    }
+    grunt.task.run([
+      'ftp_push:full'
+    ]);
 
   });
 };
