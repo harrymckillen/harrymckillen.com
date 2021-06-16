@@ -1,33 +1,32 @@
-@import 'components/variables';
-@import 'components/mixins';
+@import "components/variables";
+@import "components/mixins";
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: $mono-font;
-  scroll-snap-type: y mandatory;
 
-  h1, h2, h3 {
-    &:before{
+  h1,
+  h2,
+  h3 {
+    &:before {
       content: "{";
       padding-right: 0.5rem;
     }
-    &:after{
+    &:after {
       content: "}";
       padding-left: 0.5rem;
     }
   }
 
   h1 {
-    text-shadow: 1px 1px $amber,
-      2px 2px $black,
-      3px 3px $black;
+    text-shadow: 1px 1px $amber, 2px 2px $black, 3px 3px $black;
   }
 
   pre {
     font-family: $mono-font;
-  }
-
-  .anchor {
-    scroll-snap-align: start;
   }
 
   .double-angled-right {
@@ -47,20 +46,19 @@ body {
   }
 
   .icon-container {
-    font-size: $pixel-size*2;
-    width: $pixel-size*16;
-    height: $pixel-size*16;
+    font-size: $pixel-size * 2;
+    width: $pixel-size * 16;
+    height: $pixel-size * 16;
     display: inline-block;
   }
 
   .twitter-icon {
-    @include twitter-icon ($amber);
+    @include twitter-icon($amber);
   }
   .linkedin-icon {
-    @include linkedin-icon ($amber);
+    @include linkedin-icon($amber);
   }
   .github-icon {
-    @include github-icon ($amber);
+    @include github-icon($amber);
   }
-
 }
