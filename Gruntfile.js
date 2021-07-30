@@ -120,7 +120,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-pug');
-  grunt.loadNpmTasks('grunt-postcss')
+  // grunt.loadNpmTasks('grunt-postcss')
+  grunt.loadNpmTasks('@lodder/grunt-postcss');
   grunt.loadNpmTasks('grunt-ftp-push');
 
   // Registered Tasks
