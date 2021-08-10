@@ -21,24 +21,22 @@ html(lang="en" dir="ltr")
 
   body(itemscope itemtype="http://schema.org/Person" class="h-full w-full bg-amber")
 
-    section
+    nav(class="flex items-center justify-around h-16 w-full sm:w-2/3 mx-auto text-xl")
+      a(href="#about") About
+      a(href="#skills") Skills
+      a(href="#contact") Contact
 
-      nav(class="flex items-center justify-around h-16 w-full sm:w-2/3 mx-auto text-xl")
-        a(href="#about") About
-        a(href="#skills") Skills
-        a(href="#contact") Contact
+    header(class="sm:h-64 h-auto flex items-center text-center")
 
-      header(class="sm:h-64 h-auto flex items-center text-center")
+      div.w-full
 
-        section.w-full
+        h1(class="text-4xl sm:text-6xl font-extrabold tracking-widest") Harry McKillen
 
-          h1(class="text-4xl sm:text-6xl font-extrabold tracking-widest") Harry McKillen
+        h2(class="w-2/3 sm:w-full mx-auto px-4 my-3") Web Developer / Senior Front-end Developer / Team Lead / UI Architect
 
-          h2(class="w-2/3 sm:w-full mx-auto px-4 my-3") Web Developer / Senior Front-end Developer / Team Lead / UI Architect
+    main#about(class="bg-black text-white p-4 double-angled-right anchor")
 
-    section#about(class="bg-black text-white p-4 double-angled-right anchor")
-
-      main(class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto my-12 md:mt-16 md:mb-20")
+      div(class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto my-12 md:mt-16 md:mb-20")
 
         h3(class="text-2xl sm:text-4xl mb-2") About
 
@@ -64,21 +62,23 @@ html(lang="en" dir="ltr")
 
         p(class="text-xl sm:text-2xl") Feel free to reach out to me at #[a(class="underline" href="mailto:hi@harrymckillen.com") hi@harrymckillen.com]
 
-        p.my-4 or via
 
-      section(class="w-2/3 md:w-1/4 mx-auto flex justify-between mt-4 mb-6 text-left")
+      section(class="w-2/3 md:w-1/4 mx-auto text-center mt-4 mb-6")
 
-        a(href="https://twitter.com/_hmck" target="_blank")
-          span.icon-container
-            span.twitter-icon &nbsp;
+        h3.my-4 or via #[span(class="sr-only") Social Media]
 
-        a(href="http://www.linkedin.com/in/harrymckillen" target="_blank")
-          span.icon-container
-            span.linkedin-icon &nbsp;
+        div.flex.justify-between.text-left
+          a(href="https://twitter.com/_hmck" target="_blank")
+            span.icon-container
+              span.twitter-icon &nbsp;
 
-        a(href="https://github.com/harrymckillen" target="_blank")
-          span.icon-container
-            span.github-icon &nbsp;
+          a(href="http://www.linkedin.com/in/harrymckillen" target="_blank")
+            span.icon-container
+              span.linkedin-icon &nbsp;
+
+          a(href="https://github.com/harrymckillen" target="_blank")
+            span.icon-container
+              span.github-icon &nbsp;
 
       p(class="w-full text-center mt-4 p-4") &copy; Harry McKillen, 2020. Cill Chainnigh Abú.
 
