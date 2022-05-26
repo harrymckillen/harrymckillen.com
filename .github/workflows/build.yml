@@ -26,4 +26,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PWD }}
           local-dir: ./build/
-          server-dir: /webspace/httpdocs/sites/dev.harrymckillen.com/
+          server-dir: ${{ secrets.FTP_ROOT_LIVE }}
