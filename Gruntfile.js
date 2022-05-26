@@ -120,9 +120,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-pug');
-  // grunt.loadNpmTasks('grunt-postcss')
   grunt.loadNpmTasks('@lodder/grunt-postcss');
-  grunt.loadNpmTasks('grunt-ftp-push');
 
   // Registered Tasks
   grunt.registerTask('build',
@@ -168,53 +166,6 @@ module.exports = function (grunt) {
         'watch'
       ]);
     }
-
-  });
-
-  // FTP transfer task
-  grunt.registerTask('deploy', 'A simple task that ftp\'s stuff.', function (target){
-
-    var hosts = grunt.file.readJSON('hosts.json'),
-        env_host,
-        env_remotedir,
-        env_authkey;
-
-    if(target === 'live'){
-      // production env
-      env_authkey = 'live';
-      env_host = hosts.live.remoteurl;
-      env_remotedir = hosts.live.remotedir;
-      console.info('Deploying to Live Environment');
-    } else {
-      // dev env
-      env_authkey = 'dev';
-      env_host = hosts.dev.remoteurl;
-      env_remotedir = hosts.dev.remotedir;
-      console.info('Deploying to Dev Environment');
-    }
-
-
-    grunt.initConfig({
-      ftp_push: {
-        options: {
-          incrementalUpdates: false,
-          authKey: env_authkey,
-          host: env_host,
-          dest: env_remotedir,
-          port: 21,
-          debug: true
-        },
-        full: {
-          files: [
-            {expand: true, cwd: 'build', src: ['**/*', '.htaccess']}
-          ]
-        }
-      }
-    });
-
-    grunt.task.run([
-      'ftp_push:full'
-    ]);
 
   });
 };
