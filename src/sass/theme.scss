@@ -1,44 +1,140 @@
 @import "components/variables";
 @import "components/mixins";
+@import "components/header";
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
+  background-color: #060231;
+  color: #fff;
+  margin: 0;
   font-family: $mono-font;
+  font-size: 16px;
 
-  h1,
-  h2,
-  h3 {
-    &:before {
-      content: "{";
-      padding-right: 0.5rem;
-    }
-    &:after {
-      content: "}";
-      padding-left: 0.5rem;
-    }
+  h1, h2 {
+    margin: 0;
+    font-weight: 400;
   }
 
   pre {
     font-family: $mono-font;
   }
 
-  .double-angled-right {
-    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+  .trapezoid-background {
+    margin-top: -180px;
+    min-height: 200px;
+    position: relative;
+
+    @include superwide {
+      margin-top: -120px;
+    }
+
+    .text {
+      top:0;
+      position: absolute;
+      z-index: 30;
+      height: 100%;
+      width: 100%;
+    }
+    .navy-shape {
+      top:0;
+      position: absolute;
+      z-index: 20;
+      background-color: #060231;
+      clip-path: polygon(3% 100%, 0 0, 100% 11%, 97% 100%);
+      height: 100%;
+      width: 100%;
+    }
+
+    .white-shape {
+      z-index: 10;
+      position: absolute;
+      background-color: #fff;
+      clip-path: polygon(2% 100%, 0 0, 100% 22%, 93% 100%);
+      transform: rotate(-3deg);
+      height: 100%;
+      top: -23px;
+      width: 100%;
+      left: -1px;
+      @include superwide {
+        left: -7px;
+        transform: rotate(-1deg);
+        clip-path: polygon(4% 70%,0 0,100% 22%,96% 90%);
+      }
+      @include desktop {
+        left:-8px;
+        clip-path: polygon(3% 70%,0 0,100% 22%,96% 90%);
+        transform: rotate(-1deg);
+      }
+      @include mobile {
+        left:-3px;
+        transform: rotate(-3deg);
+      }
+    }
 
     @include tablet {
-      clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+      min-height: 250px;
+    }
+
+    @include mobile {
+      // clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+      min-height: 270px;
+
     }
   }
 
-  .top-angled-left {
-    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+  .made-80s {
+    position: relative;
+    z-index: 10;
+    font-family: 'Mr Dafoe', cursive;
+    color: #fff;
+    text-shadow: 2px 2px 0px #000000;
 
-    @include tablet {
-      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+    .made {
+      margin-top: 0;
+      line-height: 1;
+      font-size: 1.75em;
     }
+
+    .eighties {
+      font-family: 'Monoton', cursive;
+      font-size: 4.25em;
+    }
+
+    .pink-triangle {
+      position: absolute;
+      z-index: -1;
+      clip-path: polygon(0 0, 37% 100%, 100% 0);
+      background: #f867fa;
+      width: 160px;
+      height: 160px;
+      transform: rotate(-10deg);
+    }
+
+    .white-triangle {
+      position: absolute;
+      top: 10px;
+      left: 5px;
+      z-index: -2;
+      clip-path: polygon(0 0, 37% 100%, 100% 0);
+      background: #fff;
+      width: 160px;
+      height: 160px;
+      transform: rotate(-13deg);
+    }
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    vertical-align: middle;
+    transform: rotate(10deg);
+
   }
 
   .icon-container {
@@ -49,12 +145,12 @@ body {
   }
 
   .twitter-icon {
-    @include twitter-icon($amber);
+    @include twitter-icon(#f867fa);
   }
   .linkedin-icon {
-    @include linkedin-icon($amber);
+    @include linkedin-icon(#f867fa);
   }
   .github-icon {
-    @include github-icon($amber);
+    @include github-icon(#f867fa);
   }
 }

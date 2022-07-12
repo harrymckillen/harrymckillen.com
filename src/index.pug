@@ -8,39 +8,32 @@ doctype html
 html(lang="en" dir="ltr")
 
   head
-    link(href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Monoton&family=Mr+Dafoe&family=Inconsolata&display=swap" rel="stylesheet")
     link(rel="stylesheet" href="/css/output.css")
 
     meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="description" content="Harry McKillen, Web Developer, Geek, Want to be Games Developer. Dad.")
-    meta(name="theme-color" content="#111")
+    meta(name="theme-color" content="#f867fa")
 
     meta(charset="utf-8")
     title Harry McKillen
 
-  body(itemscope itemtype="http://schema.org/Person" class="h-full w-full bg-amber")
+  body(itemscope itemtype="http://schema.org/Person" class="h-full w-full")
+    //- Header
+    include components/header.pug
 
-    nav(class="flex items-center justify-around h-16 w-full sm:w-2/3 mx-auto text-xl")
-      a(href="#about") About
-      a(href="#skills") Skills
-      a(href="#contact") Contact
+    main#about(class="p-4 anchor")
 
-    header(class="sm:h-64 h-auto flex items-center text-center")
+      div(class="trapezoid-background text-center w-12/12 sm:w-3/4 lg:w-4/5 mx-auto")
+        div.text
+          h3(class="text-2xl sm:text-4xl pt-8 mb-2") About
 
-      div.w-full
-
-        h1(class="text-4xl sm:text-6xl font-extrabold tracking-widest") Harry McKillen
-
-        h2(class="w-2/3 sm:w-full mx-auto px-4 my-3") Web Developer / Senior Front-end Developer / Team Lead / UI Architect
-
-    main#about(class="bg-black text-white p-4 double-angled-right anchor")
-
-      div(class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto my-12 md:mt-16 md:mb-20")
-
-        h3(class="text-2xl sm:text-4xl mb-2") About
-
-        p(class="text-xl sm:text-2xl") Kilkenny-born Web Developer. Have 19+ years developing with a variety of Web Technologies. BSc. in Computer Science. Currently a Frontend Engineer with #[a(class="underline" target="_blank" href="https://www.inscribe.ai") InscribeAI].
+          p(class="text-xl sm:text-2xl w-10/12 mx-auto pb-4") Kilkenny-born Web Developer. Have 19+ years developing with a variety of Web Technologies. BSc. in Computer Science. Currently a Frontend Engineer with #[a(class="underline" target="_blank" href="https://www.inscribe.ai") InscribeAI].
+        div.navy-shape &nbsp;
+        div.white-shape &nbsp;
 
 
     section#skills(class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto my-8 md:mt-10 anchor")
@@ -55,7 +48,7 @@ html(lang="en" dir="ltr")
       p(class="text-xl sm:text-2xl mt-4") #[a(class="underline" target="_blank" href="http://wolfhound.ie/about.html") You can read more info on my skillset, here].
 
 
-    footer#contact(class="bg-black text-white top-angled-left float-left w-full anchor")
+    footer#contact(class="float-left w-full anchor")
 
       section(class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto mt-12 md:mt-16")
 
@@ -81,6 +74,12 @@ html(lang="en" dir="ltr")
             span.icon-container
               span.github-icon &nbsp;
 
-      p(class="w-full text-center mt-4 p-4") &copy; Harry McKillen, 2020. Cill Chainnigh Abú.
+      div(class="made-80s mx-auto mt-16")
+        small.made Made in the
+        span.eighties 80's
+        div.pink-triangle &nbsp;
+        div.white-triangle &nbsp;
+
+      p(class="w-full text-center mt-4 p-4") &copy; Harry McKillen, 1983 &mdash; Present
 
     script(src="/scripts/site.js" type="module")
