@@ -43,12 +43,3 @@
     </p>
   </section>
 </template>
-
-<script>
-import SkillCard from './SkillCard.vue'
-export default {
-  components: { SkillCard },
-}
-</script>
-
-<style></style>
