@@ -4,6 +4,7 @@
     class="text-center w-12/12 sm:w-2/3 lg:w-4/5 mx-auto my-12 md:mt-14 anchor"
   >
     <h2 class="text-4xl mb-8 flicker-text delay-animation">Skillset</h2>
+
     <div class="skills text-xl sm:text-2xl flex flex-wrap justify-center">
       <skill-card title="Javascript">
         ES5/6, Angular / AngularJS / VueJS / NodeJS / Webpack / Babel /
@@ -43,3 +44,18 @@
     </p>
   </section>
 </template>
+
+<style lang="scss" scoped>
+.skills {
+  > div {
+    width: 45%;
+    h3 {
+      text-transform: uppercase;
+      font-family: Monoton, cursive;
+    }
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
+  }
+}
+</style>

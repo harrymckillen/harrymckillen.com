@@ -21,3 +21,9 @@ export default {
   name: 'IndexPage',
 }
 </script>
+
+<style lang="scss" scoped>
+.main-body {
+  margin-top: 480px;
+}
+</style>

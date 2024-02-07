@@ -32,11 +32,70 @@
     </section>
     <div class="made-80s mx-auto mt-16">
       <small class="made">Made in the</small><span class="eighties">80's</span>
-      <div class="pink-triangle">&nbsp;</div>
-      <div class="white-triangle">&nbsp;</div>
+      <div class="pink-triangle"></div>
+      <div class="white-triangle"></div>
     </div>
     <p class="w-full text-center mt-4 p-4">
       &copy; Harry McKillen, 1983 &mdash; Present
     </p>
   </footer>
 </template>
+
+<style lang="scss" scoped>
+.made-80s {
+  position: relative;
+  z-index: 10;
+  font-family: 'Mr Dafoe', cursive;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  vertical-align: middle;
+  transform: rotate(10deg);
+
+  .made {
+    margin-top: 0;
+    line-height: 1;
+    font-size: 1.75em;
+  }
+
+  .eighties {
+    font-family: Monoton, cursive;
+    font-size: 4.25em;
+  }
+
+  .pink-triangle {
+    position: absolute;
+    z-index: -1;
+    clip-path: polygon(0 0, 37% 100%, 100% 0);
+    background: #f867fa;
+    width: 160px;
+    height: 160px;
+    transform: rotate(-10deg);
+  }
+
+  .white-triangle {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    z-index: -2;
+    clip-path: polygon(0 0, 37% 100%, 100% 0);
+    background: #fff;
+    width: 160px;
+    height: 160px;
+    transform: rotate(-13deg);
+  }
+
+  .icon {
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    padding: 0 0.5em;
+  }
+}
+</style>

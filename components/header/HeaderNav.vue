@@ -8,3 +8,21 @@
     </nav>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.nav-wrapper {
+  display: block;
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  top: 0;
+
+  a {
+    &:active,
+    &:focus,
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+}
+</style>
