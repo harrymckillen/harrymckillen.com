@@ -1,7 +1,11 @@
 import { defineNuxtConfig } from 'nuxt/config'
+import { resolve } from 'path'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  alias: {
+    '@': resolve(__dirname, '/'),
+  },
   app: {
     head: {
       title: 'Harry McKillen',
@@ -32,7 +36,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ['~/assets/styles.css'],
+  css: ['~/assets/styles.scss'],
   postcss: {
     plugins: {
       tailwindcss: {},
