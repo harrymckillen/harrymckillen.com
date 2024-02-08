@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .flicker-text {
   animation: flicker 1.5s infinite alternate;
 }

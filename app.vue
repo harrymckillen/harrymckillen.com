@@ -5,7 +5,7 @@
     <header-scene />
 
     <main class="main-body">
-      <header-text line1="Harry" line2="McKillen" />
+      <header-text first-line="Harry" second-line="McKillen" />
 
       <about-section />
     </main>

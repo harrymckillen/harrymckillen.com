@@ -66,7 +66,9 @@ export default {
     height: 5px;
     display: inline-block;
     background-color: #f867fa;
-    box-shadow: 0 0 10px 1px #fff, 0 0 20px 1px #f867fa;
+    box-shadow:
+      0 0 10px 1px #fff,
+      0 0 20px 1px #f867fa;
     margin: 2px;
 
     &:nth-child(2n) {
