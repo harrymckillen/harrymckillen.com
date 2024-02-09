@@ -42,11 +42,6 @@
         productivity, utilising tooling to aide in improving Software Quality.
       </skill-card>
     </div>
-    <p class="text-xl sm:text-2xl mt-4">
-      <a class="underline" target="_blank" href="http://wolfhound.ie/about.html"
-        >You can read more info on my skillset, here</a
-      >.
-    </p>
   </section>
 </template>
 
