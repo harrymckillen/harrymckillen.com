@@ -32,7 +32,7 @@ export default {
 
   h1 {
     font-family: 'Mr Dafoe', cursive;
-    font-size: 6.5rem;
+    font-size: 4.5rem;
     color: #eb219b;
     -webkit-text-fill-color: #fd5afa;
     text-shadow: -2px -2px 0 #ffbaf2;

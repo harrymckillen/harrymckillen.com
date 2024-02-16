@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (min-width: 768px) {
+  :root {
+    font-size: calc(1rem + ((1vw - 7.68px) * 0.6944));
+    min-height: 0vw;
+  }
+}
+@media (min-width: 1920px) {
+  :root {
+    font-size: 24px;
+  }
+}
+
 .flicker-text {
   animation: flicker 1.5s infinite alternate;
 }
@@ -21,8 +33,15 @@
   25%,
   53%,
   57% {
-    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #f867fa,
-      0 0 80px #f867fa, 0 0 90px #f867fa, 0 0 100px #f867fa, 0 0 150px #f867fa;
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #f867fa,
+      0 0 80px #f867fa,
+      0 0 90px #f867fa,
+      0 0 100px #f867fa,
+      0 0 150px #f867fa;
   }
   20%,
   24%,
@@ -38,8 +57,15 @@ h2 {
 h2 {
   font-family: 'Mr Dafoe', cursive;
   color: #fff;
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #f867fa,
-    0 0 82px #f867fa, 0 0 92px #f867fa, 0 0 102px #f867fa, 0 0 151px #f867fa;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #f867fa,
+    0 0 82px #f867fa,
+    0 0 92px #f867fa,
+    0 0 102px #f867fa,
+    0 0 151px #f867fa;
   transform: rotate(-5deg);
 }
 pre {
