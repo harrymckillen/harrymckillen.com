@@ -1,5 +1,5 @@
 <template>
-  <footer id="contact" class="float-left w-full anchor">
+  <footer id="contact" class="float-left w-full anchor footer-nav">
     <section class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto">
       <h2 class="text-4xl mb-8 flicker-text">Contact</h2>
       <p class="text-xl sm:text-2xl">
@@ -11,7 +11,7 @@
     </section>
     <section class="w-2/3 md:w-1/4 mx-auto text-center mt-4 mb-6">
       <h3 class="my-4">or via <span class="sr-only">Social Media</span></h3>
-      <div class="flex justify-center">
+      <div class="the-socials flex justify-center">
         <a
           class="mx-3 flex-shrink-0"
           href="https://twitter.com/_hmck"
@@ -42,60 +42,63 @@
 </template>
 
 <style lang="scss" scoped>
-.made-80s {
-  position: relative;
-  z-index: 10;
-  font-family: 'Mr Dafoe', cursive;
-  color: #fff;
-  text-shadow: 2px 2px 0 #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 200px;
-  height: 200px;
-  text-align: center;
-  vertical-align: middle;
-  transform: rotate(10deg);
+.footer-nav {
+  .made-80s {
+    position: relative;
+    z-index: 10;
+    font-family: 'Mr Dafoe', cursive;
+    color: #fff;
+    text-shadow: 2px 2px 0 #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    vertical-align: middle;
+    transform: rotate(10deg);
 
-  .made {
-    margin-top: 0;
-    line-height: 1;
-    font-size: 1.75em;
+    .made {
+      margin-top: 0;
+      line-height: 1;
+      font-size: 1.75em;
+    }
+
+    .eighties {
+      font-family: Monoton, cursive;
+      font-size: 4.25em;
+    }
+
+    .pink-triangle {
+      position: absolute;
+      z-index: -1;
+      clip-path: polygon(0 0, 37% 100%, 100% 0);
+      background: #f867fa;
+      width: 160px;
+      height: 160px;
+      transform: rotate(-10deg);
+    }
+
+    .white-triangle {
+      position: absolute;
+      top: 10px;
+      left: 5px;
+      z-index: -2;
+      clip-path: polygon(0 0, 37% 100%, 100% 0);
+      background: #fff;
+      width: 160px;
+      height: 160px;
+      transform: rotate(-13deg);
+    }
   }
-
-  .eighties {
-    font-family: Monoton, cursive;
-    font-size: 4.25em;
-  }
-
-  .pink-triangle {
-    position: absolute;
-    z-index: -1;
-    clip-path: polygon(0 0, 37% 100%, 100% 0);
-    background: #f867fa;
-    width: 160px;
-    height: 160px;
-    transform: rotate(-10deg);
-  }
-
-  .white-triangle {
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    z-index: -2;
-    clip-path: polygon(0 0, 37% 100%, 100% 0);
-    background: #fff;
-    width: 160px;
-    height: 160px;
-    transform: rotate(-13deg);
-  }
-
-  .icon {
-    width: 64px;
-    height: 64px;
-    display: inline-block;
-    padding: 0 0.5em;
+  .the-socials {
+    .icon {
+      width: 64px;
+      height: 64px;
+      display: inline-block;
+      padding: 0 0.5em;
+    }
   }
 }
 </style>
