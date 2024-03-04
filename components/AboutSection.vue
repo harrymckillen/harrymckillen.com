@@ -10,7 +10,7 @@
           Have 19+ years developing with a variety of Web Technologies. BSc. in
           Computer Science from the University of Limerick. Currently a Senior
           Frontend Engineer with
-          <span class="underline">InscribeAI</span>.
+          <span class="underline">TBD</span>.
         </p>
         <p class="pt-4">
           Previous roles include; Software Architect, Team Lead, Web Developer,

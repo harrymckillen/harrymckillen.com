@@ -7,19 +7,11 @@
         <div class="sun"></div>
       </div>
       <div class="city-scape">
-        <header-building />
-        <header-building size="xxl" />
-        <header-building size="sm" />
-        <header-building size="lg" />
-        <header-building size="xs" />
-        <header-building size="xxl" />
-        <header-building size="sm" />
-        <header-building size="lg" />
-        <header-building size="xl" />
-        <header-building />
-        <header-building size="xl" />
-        <header-building size="lg" />
-        <header-building size="xs" />
+        <header-building
+          v-for="(building, index) in buildings"
+          :key="index"
+          :size="building"
+        />
       </div>
     </div>
     <div class="foreground">
@@ -51,6 +43,21 @@ export default {
         'lg',
         'xl',
         'xl',
+      ],
+      buildings: [
+        'md',
+        'xxl',
+        'sm',
+        'lg',
+        'xs',
+        'xxl',
+        'sm',
+        'lg',
+        'xl',
+        'md',
+        'xl',
+        'lg',
+        'xs',
       ],
     }
   },

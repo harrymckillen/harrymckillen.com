@@ -43,5 +43,5 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['@nuxt/test-utils/module'],
+  modules: ['@nuxt/test-utils/module', '@nuxt/content'],
 })
