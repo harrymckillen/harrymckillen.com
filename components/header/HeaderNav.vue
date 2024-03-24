@@ -3,8 +3,10 @@
     <nav
       class="flex items-center h-16 w-full sm:w-2/3 justify-center mx-auto text-lg sm:text-2xl space-x-8 sm:space-x-12"
     >
-      <a href="#about">About</a><a href="#skills">Skills</a
-      ><a href="#contact">Contact</a>
+      <a href="/">Home</a><a href="/#about">About</a>
+      <NuxtLink to="/#skills">Skills</NuxtLink>
+      <NuxtLink to="/#contact">Contact</NuxtLink>
+      <!-- <NuxtLink to="/blog">Blog</NuxtLink> -->
     </nav>
   </div>
 </template>

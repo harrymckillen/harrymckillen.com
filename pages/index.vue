@@ -1,5 +1,9 @@
 <template>
-  <div class="h-full w-full" itemscope itemtype="http://schema.org/Person">
+  <div
+    class="index-page h-full w-full"
+    itemscope
+    itemtype="http://schema.org/Person"
+  >
     <header-nav />
 
     <header-scene />
@@ -23,7 +27,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main-body {
-  margin-top: 480px;
+.index-page {
+  h1,
+  h2 {
+    margin: 0;
+    font-weight: 400;
+  }
+  h2 {
+    font-family: 'Mr Dafoe', cursive;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #f867fa,
+      0 0 82px #f867fa,
+      0 0 92px #f867fa,
+      0 0 102px #f867fa,
+      0 0 151px #f867fa;
+    transform: rotate(-5deg);
+  }
+  .main-body {
+    margin-top: 480px;
+  }
 }
 </style>
