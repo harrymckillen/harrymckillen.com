@@ -28,12 +28,12 @@ export default {
 
 <style lang="scss" scoped>
 .index-page {
-  h1,
-  h2 {
+  :deep(h1),
+  :deep(h2) {
     margin: 0;
     font-weight: 400;
   }
-  h2 {
+  :deep(h2) {
     font-family: 'Mr Dafoe', cursive;
     color: #fff;
     text-shadow:
