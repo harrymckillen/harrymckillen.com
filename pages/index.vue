@@ -46,7 +46,9 @@ export default {
       0 0 102px #f867fa,
       0 0 151px #f867fa;
     transform: rotate(-5deg);
+    margin-bottom: 1em;
   }
+
   .main-body {
     margin-top: 480px;
   }
