@@ -1,5 +1,7 @@
 <script setup>
 const toggleMenu = ref(false)
+const isMobile = ref(false)
+
 const buttonLabel = computed(() => (toggleMenu.value ? 'Close' : 'Menu'))
 
 const onToggleMenu = () => {
@@ -8,6 +10,15 @@ const onToggleMenu = () => {
 
 const checkScreenWidthAndToggleMenu = () => {
   if (window.innerWidth > 640 && toggleMenu.value) {
+    toggleMenu.value = false
+    isMobile.value = false
+  } else if (window.innerWidth <= 640) {
+    isMobile.value = true
+  }
+}
+
+const onNavigate = () => {
+  if (isMobile.value) {
     toggleMenu.value = false
   }
 }
@@ -33,11 +44,11 @@ onUnmounted(() => {
           !toggleMenu,
       }"
     >
-      <NuxtLink to="/" @click="onToggleMenu">Home</NuxtLink>
-      <NuxtLink to="/#about" @click="onToggleMenu">About</NuxtLink>
-      <NuxtLink to="/#skills" @click="onToggleMenu">Skills</NuxtLink>
-      <NuxtLink to="/#contact" @click="onToggleMenu">Contact</NuxtLink>
-      <NuxtLink to="/blog?p=1">Blog</NuxtLink>
+      <NuxtLink to="/" @click="onNavigate()">Home</NuxtLink>
+      <NuxtLink to="/#about" @click="onNavigate()">About</NuxtLink>
+      <NuxtLink to="/#skills" @click="onNavigate()">Skills</NuxtLink>
+      <NuxtLink to="/#contact" @click="onNavigate()">Contact</NuxtLink>
+      <NuxtLink to="/blog?p=1" @click="onNavigate()">Blog</NuxtLink>
     </nav>
   </div>
   <button
