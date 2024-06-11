@@ -1,38 +1,37 @@
+<script setup>
+import { computed } from 'vue'
+
+const props = defineProps({
+  size: {
+    type: String,
+    default: 'md',
+  },
+})
+
+const numberOfWindows = computed(() => {
+  switch (props.size) {
+    case 'xs':
+      return 12
+    case 'sm':
+      return 14
+    case 'lg':
+      return 27
+    case 'xl':
+      return 36
+    case 'xxl':
+      return 42
+    case 'md':
+    default:
+      return 24
+  }
+})
+</script>
+
 <template>
   <div class="building" :class="[size]">
     <div v-for="window in numberOfWindows" :key="window" class="window"></div>
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-    size: {
-      type: String,
-      default: 'md',
-    },
-  },
-  computed: {
-    numberOfWindows() {
-      switch (this.size) {
-        case 'xs':
-          return 12
-        case 'sm':
-          return 14
-        case 'lg':
-          return 27
-        case 'xl':
-          return 36
-        case 'xxl':
-          return 42
-        case 'md':
-        default:
-          return 24
-      }
-    },
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 .building {

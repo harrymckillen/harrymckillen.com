@@ -1,3 +1,36 @@
+<script setup>
+const buildings = [
+  'md',
+  'xxl',
+  'sm',
+  'lg',
+  'xs',
+  'xxl',
+  'sm',
+  'lg',
+  'xl',
+  'md',
+  'xl',
+  'lg',
+  'xs',
+]
+
+const lines = [
+  'xxs',
+  'xs',
+  'xs',
+  'xs',
+  'sm',
+  'sm',
+  'md',
+  'md',
+  'lg',
+  'lg',
+  'xl',
+  'xl',
+]
+</script>
+
 <template>
   <header class="header-scene">
     <div class="sky">
@@ -25,44 +58,6 @@
     </div>
   </header>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      lines: [
-        'xxs',
-        'xs',
-        'xs',
-        'xs',
-        'sm',
-        'sm',
-        'md',
-        'md',
-        'lg',
-        'lg',
-        'xl',
-        'xl',
-      ],
-      buildings: [
-        'md',
-        'xxl',
-        'sm',
-        'lg',
-        'xs',
-        'xxl',
-        'sm',
-        'lg',
-        'xl',
-        'md',
-        'xl',
-        'lg',
-        'xs',
-      ],
-    }
-  },
-}
-</script>
 
 <style lang="scss">
 .header-scene {

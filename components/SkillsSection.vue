@@ -8,7 +8,8 @@
     <div class="skills text-xl sm:text-2xl flex flex-wrap justify-center">
       <skill-card title="Javascript">
         ES5/6, Angular / AngularJS / VueJS / NodeJS / Webpack / Babel /
-        Typescript / Cypress / Jest / Mocha / Karma / Jasmine / Storybook.
+        Typescript / Cypress / Jest / Mocha / Karma / Jasmine / Storybook. And
+        many more JS libraries over the years.
       </skill-card>
 
       <skill-card title="HTML">

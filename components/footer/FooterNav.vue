@@ -1,6 +1,21 @@
+<script setup>
+defineProps({
+  showContact: {
+    type: Boolean,
+    default: true,
+  },
+  showSocials: {
+    type: Boolean,
+    default: true,
+  },
+})
+</script>
 <template>
   <footer id="contact" class="float-left w-full anchor footer-nav">
-    <section class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto">
+    <section
+      v-if="showContact"
+      class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto"
+    >
       <h2 class="text-4xl mb-8 flicker-text">Contact</h2>
       <p class="text-xl sm:text-2xl">
         Feel free to reach out to me at
@@ -9,24 +24,31 @@
         >
       </p>
     </section>
-    <section class="w-2/3 md:w-1/4 mx-auto text-center mt-4 mb-6">
+
+    <section
+      v-if="showSocials"
+      class="w-2/3 md:w-1/4 mx-auto text-center mt-4 mb-6"
+    >
       <h3 class="my-4">or via <span class="sr-only">Social Media</span></h3>
       <div class="the-socials flex justify-center">
         <a
           class="mx-3 flex-shrink-0"
           href="https://twitter.com/_hmck"
           target="_blank"
-          ><img class="icon" src="~/assets/twitter.svg" alt="Twitter" /></a
+          ><img class="icon" src="~/assets/svgs/twitter.svg" alt="Twitter" /></a
         ><a
           class="mx-3 flex-shrink-0"
           href="http://www.linkedin.com/in/harrymckillen"
           target="_blank"
-          ><img class="icon" src="~/assets/linkedin.svg" alt="LinkedIn" /></a
+          ><img
+            class="icon"
+            src="~/assets/svgs/linkedin.svg"
+            alt="LinkedIn" /></a
         ><a
           class="mx-3 flex-shrink-0"
           href="https://github.com/harrymckillen"
           target="_blank"
-          ><img class="icon" src="~/assets/github.svg" alt="GitHub"
+          ><img class="icon" src="~/assets/svgs/github.svg" alt="GitHub"
         /></a>
       </div>
     </section>
@@ -94,10 +116,14 @@
   }
   .the-socials {
     .icon {
-      width: 64px;
-      height: 64px;
+      width: 6.5vw;
+      height: 6.5vw;
       display: inline-block;
       padding: 0 0.5em;
+      @media screen and (max-width: 640px) {
+        width: 64px;
+        height: 64px;
+      }
     }
   }
 }

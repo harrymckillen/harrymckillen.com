@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @media (min-width: 768px) {
   :root {
     font-size: calc(1rem + ((1vw - 7.68px) * 0.6944));
@@ -61,7 +60,7 @@ html {
 }
 body {
   background-color: #060231;
-  color: #fff;
+  color: #ffffff;
   margin: 0;
   font-family: Inconsolata, monospace;
   font-size: calc(15px + 0.390625vw);

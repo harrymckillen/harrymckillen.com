@@ -1,3 +1,17 @@
+<script setup>
+useHead({
+  title: 'Harry McKillen',
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content:
+        'Harry McKillen, Web Developer, Geek, Want to be Games Developer. Dad.',
+    },
+  ],
+})
+</script>
+
 <template>
   <div
     class="index-page h-full w-full"
@@ -19,12 +33,6 @@
     <footer-nav />
   </div>
 </template>
-
-<script>
-export default {
-  name: 'IndexPage',
-}
-</script>
 
 <style lang="scss" scoped>
 .index-page {

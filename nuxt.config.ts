@@ -1,7 +1,10 @@
-import { defineNuxtConfig } from 'nuxt/config'
 import { resolve } from 'path'
 
 export default defineNuxtConfig({
+  components: {
+    global: true,
+    dirs: ['~/components'],
+  },
   devtools: { enabled: true },
   alias: {
     '@': resolve(__dirname, '/'),
@@ -12,12 +15,6 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'Harry McKillen, Web Developer, Geek, Want to be Games Developer. Dad.',
-        },
         { name: 'format-detection', content: 'telephone=no' },
         { name: 'theme-color', content: '#f867fa' },
       ],
@@ -43,5 +40,27 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['@nuxt/test-utils/module', '@nuxt/content'],
+  modules: ['@nuxt/test-utils/module', '@nuxt/content', '@nuxt/image'],
+  content: {
+    // Configuring code highlighting
+    // https://content.nuxtjs.org/api/configuration
+    highlight: {
+      theme: 'github-dark',
+      // Define languages you expect to use
+      preload: ['javascript', 'typescript', 'css', 'scss', 'json'],
+    },
+    markdown: {
+      // Configuring external link processing
+      // https://github.com/rehypejs/rehype-external-links
+      rehypePlugins: [
+        [
+          'rehype-external-links',
+          {
+            target: '_blank',
+            rel: 'noopener noreferer',
+          },
+        ],
+      ],
+    },
+  },
 })

@@ -1,23 +1,21 @@
+<script setup>
+defineProps({
+  firstLine: {
+    type: String,
+    default: null,
+  },
+  secondLine: {
+    type: String,
+    default: null,
+  },
+})
+</script>
 <template>
   <div class="header-text">
     <h1>{{ firstLine }}</h1>
     <h1>{{ secondLine }}</h1>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    firstLine: {
-      type: String,
-      default: null,
-    },
-    secondLine: {
-      type: String,
-      default: null,
-    },
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 .header-text {
