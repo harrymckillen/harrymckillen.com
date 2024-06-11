@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 
 export default defineNuxtConfig({
+  ssr: false,
   components: {
     global: true,
     dirs: ['~/components'],
@@ -44,6 +45,10 @@ export default defineNuxtConfig({
   content: {
     // Configuring code highlighting
     // https://content.nuxtjs.org/api/configuration
+    fallback: true,
+    experimental: {
+      clientDB: true,
+    },
     highlight: {
       theme: 'github-dark',
       // Define languages you expect to use

@@ -41,7 +41,7 @@ import { formatDate } from '~/assets/utils'
     }
 
     :deep(h2) {
-      @apply text-3xl font-bold my-4;
+      @apply text-3xl font-bold mt-6 mb-2;
     }
 
     :deep(h3) {
