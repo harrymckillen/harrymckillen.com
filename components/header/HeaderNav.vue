@@ -1,7 +1,6 @@
 <script setup>
 const toggleMenu = ref(false)
 const isMobile = ref(false)
-
 const buttonLabel = computed(() => (toggleMenu.value ? 'Close' : 'Menu'))
 
 const onToggleMenu = () => {
@@ -48,7 +47,7 @@ onUnmounted(() => {
       <NuxtLink to="/#about" @click="onNavigate()">About</NuxtLink>
       <NuxtLink to="/#skills" @click="onNavigate()">Skills</NuxtLink>
       <NuxtLink to="/#contact" @click="onNavigate()">Contact</NuxtLink>
-      <NuxtLink to="/blog?p=1" @click="onNavigate()">Blog</NuxtLink>
+      <!-- <NuxtLink to="/blog?p=1" @click="onNavigate()">Blog</NuxtLink> -->
     </nav>
   </div>
   <button
