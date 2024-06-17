@@ -6,6 +6,7 @@ import { formatDate } from '~/assets/utils'
   <div class="blog-post mx-auto w-full sm:w-2/3 p-4">
     <header-nav />
 
+    <!-- {{ $route.params }} -->
     <ContentDoc v-slot="{ doc }">
       <article>
         <div class="text-center mt-8">
