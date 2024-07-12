@@ -2,14 +2,18 @@ import { resolve } from 'path'
 
 export default defineNuxtConfig({
   ssr: false,
+
   components: {
     global: true,
     dirs: ['~/components'],
   },
+
   devtools: { enabled: true },
+
   alias: {
     '@': resolve(__dirname, '/'),
   },
+
   app: {
     head: {
       title: 'Harry McKillen',
@@ -34,14 +38,18 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   css: ['~/assets/styles.scss'],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   modules: ['@nuxt/test-utils/module', '@nuxt/content', '@nuxt/image'],
+
   content: {
     // Configuring code highlighting
     // https://content.nuxtjs.org/api/configuration
@@ -68,4 +76,6 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  compatibilityDate: '2024-07-12',
 })
