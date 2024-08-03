@@ -4,6 +4,10 @@ export default defineNuxtConfig({
   ssr: false,
   target: 'static',
 
+  generate: {
+    routes: ['/blog/*'],
+  },
+
   components: {
     global: true,
     dirs: ['~/components'],
