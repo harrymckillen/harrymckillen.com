@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   target: 'static',
 
   generate: {
-    routes: ['/blog/*'],
+    routes: ['/blog'],
   },
 
   components: {
