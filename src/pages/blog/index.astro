@@ -1,0 +1,49 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+
+import HeaderNav from "../../components/vue-components/header/HeaderNav.vue";
+import FooterNav from "../../components/vue-components/footer/FooterNav.vue";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <div class="blog-index flex flex-col">
+      <HeaderNav client:load />
+      <main class="mx-auto w-full sm:w-2/3 p-4 flex flex-col">
+        <section class="flex flex-wrap sm:flex-row">
+          {
+            posts.map((post) => (
+              <div class="py-6 w-full">
+                <small class="inline-block mb-4">
+                  <FormattedDate date={post.data.pubDate} />
+                </small>
+                <a href={`/blog/${post.slug}/`} class="hover:underline">
+                  <h2 class="title">{post.data.title}</h2>
+                </a>
+                <p>{post.data.description}</p>
+                <a
+                  href={`/blog/${post.slug}/`}
+                  class="inline-block mt-6 mb-4 px-4 py-2 border-2 border-solid rounded cursor-pointer"
+                >
+                  Read more
+                </a>
+              </div>
+            ))
+          }
+        </section>
+      </main>
+      <FooterNav showContact={false} showSocials={false} />
+    </div>
+  </body>
+</html>

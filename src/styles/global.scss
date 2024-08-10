@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 768px) {
+  :root {
+    font-size: calc(1rem + ((1vw - 7.68px) * 0.6944));
+    min-height: 0vw;
+  }
+}
+@media (min-width: 1920px) {
+  :root {
+    font-size: 24px;
+  }
+}
+
+.flicker-text {
+  animation: flicker 1.5s infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flicker-text {
+    animation: none;
+  }
+}
+.delay-animation {
+  animation-delay: 1.5s;
+}
+@keyframes flicker {
+  0%,
+  100%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #f867fa,
+      0 0 80px #f867fa,
+      0 0 90px #f867fa,
+      0 0 100px #f867fa,
+      0 0 150px #f867fa;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+pre {
+  font-family: Inconsolata, monospace;
+}
+a:active,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #060231;
+  color: #ffffff;
+  margin: 0;
+  font-family: Inconsolata, monospace;
+  font-size: calc(15px + 0.390625vw);
+
+  .footer-nav,
+  .index-page {
+    h1,
+    h2 {
+      margin: 0;
+      font-weight: 400;
+    }
+    h2 {
+      font-family: "Mr Dafoe", cursive;
+      color: #fff;
+      text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #f867fa,
+        0 0 82px #f867fa,
+        0 0 92px #f867fa,
+        0 0 102px #f867fa,
+        0 0 151px #f867fa;
+      transform: rotate(-5deg);
+      margin-bottom: 1em;
+    }
+
+    .main-body {
+      margin-top: 480px;
+    }
+  }
+
+  .blog-post,
+  .blog-index {
+    .nav-wrapper {
+      position: relative;
+    }
+  }
+
+  .blog-index {
+    h2 {
+      @apply text-3xl;
+    }
+  }
+
+  .blog-post {
+    article {
+      h1 {
+        @apply text-4xl font-bold my-10 text-center;
+      }
+
+      h2 {
+        @apply text-3xl font-bold mt-6 mb-2;
+      }
+
+      h3 {
+        @apply text-2xl font-bold my-4;
+      }
+
+      h4 {
+        @apply text-xl font-medium my-4;
+      }
+
+      p {
+        @apply mb-4;
+        a {
+          @apply underline;
+        }
+      }
+
+      pre {
+        @apply bg-gray-800 p-4 rounded-lg my-8;
+        overflow-x: auto;
+      }
+    }
+  }
+}

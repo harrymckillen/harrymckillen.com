@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Author from "../components/vue-components/blog/Author.vue";
+import HeaderNav from "../components/vue-components/header/HeaderNav.vue";
+import FooterNav from "../components/vue-components/footer/FooterNav.vue";
+import FormattedDate from "../components/FormattedDate.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <div class="blog-post mx-auto w-full sm:w-2/3 p-4">
+      <HeaderNav client:load />
+      <main>
+        <article>
+          <div class="text-center mt-8">
+            <span class="date">
+              <FormattedDate date={pubDate} />
+              {
+                updatedDate && (
+                  <span class="last-updated-on">
+                    Last updated on <FormattedDate date={updatedDate} />
+                  </span>
+                )
+              }
+            </span>
+          </div>
+          <h1>{title}</h1>
+          <p>{description}</p>
+          <slot />
+        </article>
+
+        <Author />
+      </main>
+    </div>
+    <FooterNav showContact={false} showSocials={false} />
+  </body>
+</html>

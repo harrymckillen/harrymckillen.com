@@ -1,0 +1,41 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+import HeaderNav from "../components/vue-components/header/HeaderNav.vue";
+import HeaderScene from "../components/vue-components/header/HeaderScene.vue";
+import HeaderText from "../components/vue-components/header/HeaderText.vue";
+import AboutSection from "../components/vue-components/AboutSection.vue";
+import SkillsSection from "../components/vue-components/SkillsSection.vue";
+import FooterNav from "../components/vue-components/footer/FooterNav.vue";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+
+    <style lang="scss"></style>
+  </head>
+  <body>
+    <div
+      class="index-page h-full w-full"
+      itemscope
+      itemtype="http://schema.org/Person"
+    >
+      <HeaderNav client:load />
+
+      <HeaderScene />
+
+      <main class="main-body">
+        <HeaderText firstLine="Harry" secondLine="McKillen" />
+
+        <AboutSection />
+      </main>
+
+      <SkillsSection />
+
+      <FooterNav showContact={true} showSocials={true} />
+    </div>
+  </body>
+</html>
