@@ -10,7 +10,7 @@ const onToggleMenu = () => {
   if (toggleMenu.value) {
     document.body.classList.add("overflow-hidden");
   } else {
-    document.body.classList.remove("overflow-hidden");
+    removeOverflowHidden();
   }
 };
 
@@ -18,14 +18,20 @@ const checkScreenWidthAndToggleMenu = () => {
   if (window.innerWidth > 640 && toggleMenu.value) {
     toggleMenu.value = false;
     isMobile.value = false;
+    removeOverflowHidden();
   } else if (window.innerWidth <= 640) {
     isMobile.value = true;
   }
 };
 
+const removeOverflowHidden = () => {
+  document.body.classList.remove("overflow-hidden");
+};
+
 const onNavigate = () => {
   if (isMobile.value) {
     toggleMenu.value = false;
+    removeOverflowHidden();
   }
 };
 
