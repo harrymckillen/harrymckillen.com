@@ -2,7 +2,6 @@
 title: "A Bad UX Example"
 description: "One specific example I have is not related to the digital world at all. I own two models of Ford (a Mondeo and a Focus). Being the same brand of car, and close enough in age, I would expect there to be some crossover in the parts used."
 pubDate: "20 Dec 2016"
-heroImage: "/blog-imgs/001-ford-wiper.jpg"
 ---
 
 UX, or User Experience is now often used in context with a digital experience of end-users. It has existed for as long as we have been building anything. Obviously this is a massive subject area, and too vast to cover off in a single blog post.

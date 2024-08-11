@@ -25,10 +25,13 @@ const posts = (await getCollection("blog")).sort(
           {
             posts.map((post) => (
               <div class="py-6 w-full">
-                <small class="inline-block mb-4">
+                <small class="block mb-4">
                   <FormattedDate date={post.data.pubDate} />
                 </small>
-                <a href={`/blog/${post.slug}/`} class="hover:underline">
+                <a
+                  href={`/blog/${post.slug}/`}
+                  class="block hover:underline mb-4"
+                >
                   <h2 class="title">{post.data.title}</h2>
                 </a>
                 <p>{post.data.description}</p>
