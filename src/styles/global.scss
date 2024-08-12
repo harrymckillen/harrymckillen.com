@@ -53,10 +53,14 @@
 pre {
   font-family: Inconsolata, monospace;
 }
-a:active,
-a:focus,
-a:hover {
-  text-decoration: none;
+
+a {
+  @apply underline;
+  &:active,
+  &:focus,
+  &:hover {
+    @apply no-underline;
+  }
 }
 html {
   scroll-behavior: smooth;
@@ -107,6 +111,9 @@ body {
     h2 {
       @apply text-3xl;
     }
+    a {
+      @apply no-underline;
+    }
   }
 
   .blog-post {
@@ -129,8 +136,13 @@ body {
 
       p {
         @apply mb-4;
-        a {
-          @apply underline;
+      }
+
+      a {
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          @apply bg-hot-pink;
         }
       }
 

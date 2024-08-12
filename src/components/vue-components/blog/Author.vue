@@ -10,7 +10,8 @@
     <div>
       <h4 class="text-xl font-semibold my-4">About the author</h4>
       <p>
-        My name is Harry. I'm a Front-end Web Developer for Optifly. I like to
+        My name is Harry. I'm a Front-end Web Developer for
+        <a href="https://optifly.com" class="underline">Optifly</a>. I like to
         mess around with code in my spare time and I occasionally try to write
         about it. I like a lot of other things away from the Internet and work,
         like coffee, books, TV, Movies, and music.

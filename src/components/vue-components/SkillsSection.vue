@@ -41,10 +41,9 @@ import SkillCard from "./SkillCard.vue";
       </SkillCard>
 
       <SkillCard title="Special Interests">
-        I have a keen interest in the following areas; Web Accessibility, Web
-        Performance, Web Security, Web Standards, Web Design, UX, UI, Design
-        Systems, CI/CD, etc. I love improving overall developer experience and
-        productivity, utilising tooling to aide in improving Software Quality.
+        In addition to my main skillset, I'm interested in Web Accessibility,
+        Web Performance, Web Security, Web Standards, Web Design, UX, UI, Design
+        Systems, CI/CD, etc. As well as improving overall developer experience.
       </SkillCard>
     </div>
   </section>

@@ -87,6 +87,7 @@ onUnmounted(() => {
   }
 
   a {
+    text-decoration: none !important;
     &:active,
     &:focus,
     &:hover {
