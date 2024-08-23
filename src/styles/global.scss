@@ -120,6 +120,13 @@ body {
   .standard-page,
   .blog-post {
     article {
+      .tags {
+        @apply mt-3 flex gap-4 items-center justify-center;
+        .tag {
+          @apply bg-white text-black px-2 py-1 rounded;
+        }
+      }
+
       h1 {
         @apply text-4xl font-bold my-10 text-center;
       }

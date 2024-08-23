@@ -2,6 +2,7 @@
 title: "A short journey through some Web Development Project methodologies"
 description: "First off, this is an opinion piece. It’s not a definitive critique of all development processes, it is merely representative of my experience to-date with the different theories surrounding software/web development."
 pubDate: "16 Nov 2018"
+tags: ["Opinion", "Project Methodologies"]
 ---
 
 For the remainder of the article, I'll just refer to software/web methodologies as web ones. I've really only worked on web related projects in my career, but there's pretty much no difference (open to correction here though).

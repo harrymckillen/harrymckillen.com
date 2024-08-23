@@ -2,6 +2,7 @@
 title: "Above the fold"
 description: "Many of us will know what above the fold means in relation to print design. It refers to the top section of a broadsheet when folded, which is typically visible to a customer in a newsagents for example."
 pubDate: "28 Mar 2017"
+tags: ["Rant", "Web Design"]
 ---
 
 Many of us will know what above the fold means in relation to print design. It refers to the top section of a broadsheet when folded, which is typically visible to a customer in a newsagents for example. The premise being that the main headline is upfront and center, and generally contains other attention grabbing information, like ads etc. It is seen as highly valuable space.

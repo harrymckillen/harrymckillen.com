@@ -2,6 +2,7 @@
 title: "Another first post but also about over-engineering"
 description: "Every few years, I rebuild a few of my websites, either by redesigning them or by changing the underlying technology. This is a story about the latter."
 pubDate: "11 Aug 2024"
+tags: ["Opinion", "Over-Engineering"]
 ---
 
 In the last couple of years, I redesigned this website. It was a simple one-pager. I wanted to add a blog. I'd previously built a simple enough Static Site Generator (SSG), using Pug, and AngularJS and GruntJS, but it was over 10 years old, and a bit cumbersome, and not as automated as I'd have liked.
