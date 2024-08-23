@@ -1,0 +1,80 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+import HeaderNav from "../components/vue-components/header/HeaderNav.vue";
+import HeaderScene from "../components/vue-components/header/HeaderScene.vue";
+import HeaderText from "../components/vue-components/header/HeaderText.vue";
+import AboutSection from "../components/vue-components/AboutSection.vue";
+import SkillsSection from "../components/vue-components/SkillsSection.vue";
+import FooterNav from "../components/vue-components/footer/FooterNav.vue";
+
+const pageTitle = SITE_TITLE + " - Dear Recruiter";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={pageTitle} description={SITE_DESCRIPTION} />
+
+    <style lang="scss"></style>
+  </head>
+  <body>
+    <div class="standard-page h-full w-full">
+      <HeaderNav client:load />
+
+      <main class="mx-auto w-full sm:w-2/3 p-4 mb-10">
+        <article>
+          <h1>Dear Recruiter</h1>
+
+          <p>
+            If you have reached out to me recently on LinkedIn, and I've
+            directed you here, it's so that you have reached out with a job
+            opportunity that you feel I am suitable for. I appreciate the time
+            you have taken to reach out to me, and I hope you also appreciate
+            that I frequently get contacted about job opportunities.
+          </p>
+
+          <h2>Do my skills match your requirements?</h2>
+          <p>
+            Quite often I get roles related to design, or specifically requiring
+            X years of React experience to be considered. I've never really used
+            React, and if I went forward for a role that didn't match my
+            skillset, only to be knocked back for it, it's not something that
+            would be worth my time. I know in advance what I know. I could
+            absolutely learn React, but if your clients specific needs are for
+            someone who has a predefined skillset, and a cursory glance of my
+            CV/LinkedIn doesn't tell you I have it, then you're wasting both of
+            our times.
+          </p>
+
+          <h2>What am I looking for?</h2>
+          <p>
+            I like to work in interesting industries, and on interesting
+            products. I have worked in a few different companies over the years,
+            and some have been quite niche.
+          </p>
+
+          <p>
+            I typically look for companies where I can be an effective team
+            player.
+          </p>
+
+          <p>
+            I have had a number of roles in my career, including Leadership
+            roles. But I am happiest when I am contributing to the development
+            side of a product. Roles which offer an opportunity to grow into a
+            Leadership role don't necessarily appeal to me, as I am really
+            comfortable at a Senior Engineer level. I'm not seeking an
+            Engineering Manager or Team Lead level role. I'm absolutely happy to
+            provide mentorship to junior engineers in my Senior Engineer
+            capacity, but I'm not looking to manage a team, having done so for a
+            number of years already.
+          </p>
+        </article>
+      </main>
+
+      <FooterNav showContact={true} showSocials={true} />
+    </div>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { type CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Author from "../components/vue-components/blog/Author.vue";
 import HeaderNav from "../components/vue-components/header/HeaderNav.vue";
@@ -8,7 +8,7 @@ import FormattedDate from "../components/FormattedDate.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, minutesRead } = Astro.props;
 ---
 
 <html lang="en">
@@ -32,15 +32,21 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
                 )
               }
             </span>
+            {
+              minutesRead && (
+                <span class="minutes-read">&middot; {minutesRead}</span>
+              )
+            }
           </div>
+
           <h1>{title}</h1>
           <p>{description}</p>
           <slot />
-        </article>
 
-        <Author />
+          <Author />
+        </article>
       </main>
+      <FooterNav showContact={false} showSocials={false} />
     </div>
-    <FooterNav showContact={false} showSocials={false} />
   </body>
 </html>

@@ -1,16 +1,20 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
+
+export const blogSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  minutesRead: z.string().optional(),
+  // Transform string to Date object
+  pubDate: z.coerce.date(),
+  updatedDate: z.coerce.date().optional(),
+});
 
 const blog = defineCollection({
-	type: 'content',
-	// Type-check frontmatter using a schema
-	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		// Transform string to Date object
-		pubDate: z.coerce.date(),
-		updatedDate: z.coerce.date().optional(),
-		heroImage: z.string().optional(),
-	}),
+  type: "content",
+  // Type-check frontmatter using a schema
+  schema: blogSchema,
 });
+
+export type BlogFrontmatter = z.infer<typeof blogSchema>;
 
 export const collections = { blog };

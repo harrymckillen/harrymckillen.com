@@ -10,12 +10,14 @@ import FooterNav from "../../components/vue-components/footer/FooterNav.vue";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const pageTitle = SITE_TITLE + " - Blog";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={pageTitle} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <div class="blog-index flex flex-col">
