@@ -8,6 +8,5 @@ export function remarkReadingTime() {
     // readingTime.text will give us minutes read as a friendly string,
     // i.e. "3 min read"
     data.astro.frontmatter.minutesRead = readingTime.text;
-    console.log(data.astro.frontmatter.minutesRead);
   };
 }
