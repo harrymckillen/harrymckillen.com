@@ -4,19 +4,35 @@ import BlogPost from "../../layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: post,
-  }));
+  return posts.map((post, index) => {
+    const prevPost = index > 0 ? posts[index - 1] : null;
+    const nextPost = index < posts.length - 1 ? posts[index + 1] : null;
+
+    return {
+      params: { slug: post.slug },
+      props: {
+        ...post,
+        prevPost: prevPost
+          ? { slug: prevPost.slug, title: prevPost.data.title }
+          : null,
+        nextPost: nextPost
+          ? { slug: nextPost.slug, title: nextPost.data.title }
+          : null,
+      },
+    };
+  });
 }
 
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<"blog"> & {
+  prevPost?: { slug: string; title: string };
+  nextPost?: { slug: string; title: string };
+};
 
 const post = Astro.props;
 const { Content, remarkPluginFrontmatter } = await post.render();
 post.data.minutesRead = remarkPluginFrontmatter.minutesRead;
 ---
 
-<BlogPost {...post.data}>
+<BlogPost {...post.data} prevPost={post.prevPost} nextPost={post.nextPost}>
   <Content />
 </BlogPost>

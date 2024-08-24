@@ -16,6 +16,4 @@ const blog = defineCollection({
   schema: blogSchema,
 });
 
-export type BlogFrontmatter = z.infer<typeof blogSchema>;
-
 export const collections = { blog };

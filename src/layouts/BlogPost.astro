@@ -6,9 +6,12 @@ import HeaderNav from "../components/vue-components/header/HeaderNav.vue";
 import FooterNav from "../components/vue-components/footer/FooterNav.vue";
 import FormattedDate from "../components/FormattedDate.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & {
+  prevPost?: { slug: string; title: string };
+  nextPost?: { slug: string; title: string };
+};
 
-const { title, description, pubDate, updatedDate, tags, minutesRead } =
+const { title, description, pubDate, updatedDate, tags, minutesRead, prevPost, nextPost  } =
   Astro.props;
 ---
 
@@ -43,8 +46,7 @@ const { title, description, pubDate, updatedDate, tags, minutesRead } =
           <h1>{title}</h1>
           <p>{description}</p>
           <slot />
-          {
-            tags && tags.length > 0 && (
+          {tags && tags.length > 0 && (
               <div class="text-center mt-9">Filed under</div>
               <span class="tags">
                 {tags.map((tag) => (
@@ -53,6 +55,22 @@ const { title, description, pubDate, updatedDate, tags, minutesRead } =
               </span>
             )
           }
+          <div class="flex mt-8 justify-between">
+            <div>
+              {prevPost && (
+                <a href={`/blog/${prevPost.slug}`} class="border-2 rounded p-4 no-underline" title={prevPost.title}>
+                  &larr; Previous Post
+                </a>
+              )}
+            </div>
+            <div>
+              {nextPost && (
+                <a href={`/blog/${nextPost.slug}`} class="border-2 rounded p-4 no-underline" title={nextPost.title}>
+                  Next Post &rarr;
+                </a>
+              )}
+            </div>
+          </div>
           <Author />
         </article>
       </main>
