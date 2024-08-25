@@ -150,6 +150,9 @@ body {
           height: auto;
           display: block;
         }
+        code {
+          @apply bg-gray-600 p-1 rounded;
+        }
       }
 
       a {
@@ -161,7 +164,7 @@ body {
       }
 
       pre {
-        @apply bg-gray-800 p-4 rounded-lg my-8;
+        @apply bg-gray-800 p-4 rounded-lg mt-2 mb-4;
         overflow-x: auto;
       }
     }

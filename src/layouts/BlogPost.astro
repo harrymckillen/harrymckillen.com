@@ -55,17 +55,17 @@ const { title, description, pubDate, updatedDate, tags, minutesRead, prevPost, n
               </span>
             )
           }
-          <div class="flex mt-8 justify-between">
+          <div class="flex mt-9 justify-between">
             <div>
               {prevPost && (
-                <a href={`/blog/${prevPost.slug}`} class="border-2 rounded p-4 no-underline" title={prevPost.title}>
+                <a href={`/blog/${prevPost.slug}`} class="inline-block border-2 rounded px-4 py-1 no-underline" title={prevPost.title}>
                   &larr; Previous Post
                 </a>
               )}
             </div>
             <div>
               {nextPost && (
-                <a href={`/blog/${nextPost.slug}`} class="border-2 rounded p-4 no-underline" title={nextPost.title}>
+                <a href={`/blog/${nextPost.slug}`} class="inline-block border-2 rounded px-4 py-1 no-underline" title={nextPost.title}>
                   Next Post &rarr;
                 </a>
               )}
