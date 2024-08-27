@@ -9,12 +9,11 @@ I followed the [Astro Reading Time recipe](https://docs.astro.build/en/recipes/r
 
 So I thought I'd write this up in case anyone else has had the same issue. I found a Github issue that achieved the same thing with an alternative approach, but I wanted to stick with the recipe as much as possible.
 
-
 `[...slug].astro`
 
 ```jsx
 const { Content, remarkPluginFrontmatter } = await post.render();
-post.data.minutesRead = 
+post.data.minutesRead =
 remarkPluginFrontmatter.minutesRead; 👈 the issue was I was rendering the post via a Layout
 ---
 
@@ -22,7 +21,8 @@ remarkPluginFrontmatter.minutesRead; 👈 the issue was I was rendering the post
   <Content />
 </BlogPost>
 ```
-In the snippet about, I was passing the `post.data` to the `BlogPost` component, but I was not passing the frontmatter property to the `BlogPost`  So this may help someone else who is having the same issue, or is fresh to Astro like me.
+
+In the snippet about, I was passing the `post.data` to the `BlogPost` component, but I was not passing the frontmatter property to the `BlogPost` So this may help someone else who is having the same issue, or is fresh to Astro like me.
 
 You will also need to add the `minutesRead` to the schema in `config.ts` as it might be complain about it being an unknown property of the `blog` data collection, as it did in my case, for my particular setup.
 
@@ -38,5 +38,4 @@ export const blogSchema = z.object({
 });
 ```
 
-I hope this helps someone else out there. 
-```
+I hope this helps someone else out there.
