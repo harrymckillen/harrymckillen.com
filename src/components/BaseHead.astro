@@ -49,3 +49,13 @@ const { title, description, image = "/site-placeholder.png" } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- iOS Support -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta
+  name="apple-mobile-web-app-status-bar-style"
+  content="black-translucent"
+/>
+<meta name="apple-mobile-web-app-title" content={title} />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<link rel="apple-touch-startup-image" href="/favicon.svg" />
