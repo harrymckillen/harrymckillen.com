@@ -24,9 +24,7 @@ remarkPluginFrontmatter.minutesRead; 👈 the issue was I was rendering the post
 </BlogPost>
 ```
 
-In the snippet above, I was passing the `post.data` to the `BlogPost` component, but I was not passing the frontmatter property to the `BlogPost`. So here I imported the `remarkPluginFrontmatter` and assigned the `minutesRead` to the `post.data.minutesRead` property.
-
-In the recipe there were two ways mention in order to get this to work. The first one was similar to how I achieved it. But it rendered the Post in the template directly. The other solution used the `frontmatter` prop in the layout itself, but when I tried this, it didn't work for me.
+In the snippet above, I was passing the `post.data` to the `BlogPost` component, but I was not passing the frontmatter property to the `BlogPost` via `post.data`. So here I imported the `remarkPluginFrontmatter` (as the recipe described) and assigned the `minutesRead` to the `post.data.minutesRead` property. This was the missing link for me, it wasn't being passed automagically.
 
 So this may help someone else who is having the same issue, or is fresh to Astro like me.
 
