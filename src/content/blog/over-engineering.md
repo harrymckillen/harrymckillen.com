@@ -13,7 +13,7 @@ After I had spent time building everything I wanted, in the way I wanted, I gene
 
 Meanwhile I saw some GIF someone posted about Frontend Devs using a completely bloated meta framework to do a simple job, something to the effect of below of using the wrong tool, ill-suited to the task. It could do the job no doubt, but it was totally over-engineering it from my perspective.
 
-<div style="width:100%;height:0;padding-bottom:56%;position:relative;margin-bottom:1em;"><iframe src="https://giphy.com/embed/3o6Zt8bRzXQvHMcQda" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+![Overkill](/blog-imgs/overkill.webp)
 
 The salient point was the same. I had wanted to use NuxtJS, because it was easy to use, and I was familiar with VueJS. But it was overkill for what I needed. I needed a simple blog. I didn't need a full-blown VueJS app. I didn't need to talk to an API. I didn't need to have dynamic content, at least for the moment anyways.
 
