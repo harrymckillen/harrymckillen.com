@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const toggleMenu = ref(false);
+const isScrolled = ref(false);
 const isMobile = ref(false);
 const buttonLabel = computed(() => (toggleMenu.value ? "Close" : "Menu"));
 
@@ -35,24 +36,30 @@ const onNavigate = () => {
   }
 };
 
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 0;
+};
+
 onMounted(() => {
   window.addEventListener("resize", checkScreenWidthAndToggleMenu);
+  window.addEventListener("scroll", handleScroll);
   checkScreenWidthAndToggleMenu();
 });
 
 onUnmounted(() => {
   window.removeEventListener("resize", checkScreenWidthAndToggleMenu);
+  window.removeEventListener("scroll", handleScroll);
 });
 </script>
 
 <template>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper" :class="{ scrolled: isScrolled }">
     <nav
-      class="flex items-center justify-center w-full"
+      class="flex items-center justify-center w-full my-6"
       :class="{
         'flex-col visible fixed top-0 right-0 z-100 text-3xl space-y-4 py-8 toggled-open':
           toggleMenu,
-        'mx-auto text-lg sm:text-2xl space-x-8 sm:space-x-12 invisible sm:visible sm:w-2/3':
+        'mx-auto text-lg sm:text-2xl space-x-8 sm:space-x-10 invisible sm:visible sm:w-2/3':
           !toggleMenu,
       }"
     >
@@ -64,7 +71,7 @@ onUnmounted(() => {
     </nav>
   </div>
   <button
-    class="absolute top-0 right-0 z-50 rounded border-2 m-4 px-4 py-2 visible sm:invisible"
+    class="fixed top-2 right-2 z-30 bg-black/20 backdrop-blur-md rounded border-2 px-4 py-2 visible sm:invisible w-24"
     @click="onToggleMenu"
   >
     {{ buttonLabel }}
@@ -73,25 +80,26 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 .nav-wrapper {
-  display: flex;
-  position: absolute;
-  z-index: 20;
-  width: 100%;
-  @apply h-16;
-  top: 0;
+  @apply sticky h-16 flex z-20 w-full top-0 p-2;
 
   .toggled-open {
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    @apply h-screen;
+    @apply bg-black/20 backdrop-blur-md h-screen;
   }
 
   a {
+    @apply mt-4 p-4;
     text-decoration: none !important;
+    border: 1px solid transparent;
     &:active,
     &:focus,
     &:hover {
       text-decoration: underline !important;
+    }
+  }
+
+  &.scrolled {
+    a {
+      @apply sm:bg-black/20 sm:backdrop-blur-md bg-none transition-all rounded-lg;
     }
   }
 }

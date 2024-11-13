@@ -25,18 +25,7 @@
 
 <style lang="scss" scoped>
 .about-section {
-  &.neon-border {
-    background: #060231;
-    border: 0.2rem solid #fff;
-    border-radius: 2rem;
-    padding: 0.4em;
-    box-shadow:
-      0 0 0.2rem #fff,
-      0 0 0.2rem #fff,
-      0 0 2rem #f867fa,
-      0 0 0.8rem #f867fa,
-      0 0 2.8rem #f867fa,
-      inset 0 0 1.3rem #f867fa;
-  }
+  background: #060231;
+  padding: 0.4em;
 }
 </style>
