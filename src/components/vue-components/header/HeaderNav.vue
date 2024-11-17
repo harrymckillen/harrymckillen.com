@@ -82,24 +82,30 @@ onUnmounted(() => {
 .nav-wrapper {
   @apply sticky h-16 flex z-20 w-full top-0 p-2;
 
-  .toggled-open {
-    @apply bg-black/20 backdrop-blur-md h-screen p-0 m-0;
-  }
-
-  a {
-    @apply mt-4 p-4;
-    text-decoration: none !important;
-    border: 1px solid transparent;
-    &:active,
-    &:focus,
-    &:hover {
-      text-decoration: underline !important;
+  &.scrolled {
+    a {
+      @apply sm:bg-black/20 sm:backdrop-blur-md bg-none rounded-lg;
     }
   }
 
-  &.scrolled {
+  nav {
+    &.toggled-open {
+      @apply bg-black/20 backdrop-blur-md h-screen p-0 m-0;
+
+      a {
+        @apply m-0 p-2;
+      }
+    }
+
     a {
-      @apply sm:bg-black/20 sm:backdrop-blur-md bg-none transition-all rounded-lg;
+      @apply mt-4 p-4;
+      text-decoration: none !important;
+      border: 1px solid transparent;
+      &:active,
+      &:focus,
+      &:hover {
+        text-decoration: underline !important;
+      }
     }
   }
 }
