@@ -83,7 +83,7 @@ onUnmounted(() => {
   @apply sticky h-16 flex z-20 w-full top-0 p-2;
 
   .toggled-open {
-    @apply bg-black/20 backdrop-blur-md h-screen;
+    @apply bg-black/20 backdrop-blur-md h-screen p-0 m-0;
   }
 
   a {
