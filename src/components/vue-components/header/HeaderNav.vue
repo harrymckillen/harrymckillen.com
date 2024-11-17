@@ -80,7 +80,7 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 .nav-wrapper {
-  @apply sticky h-16 flex z-20 w-full top-0 p-2;
+  @apply fixed h-16 flex z-20 w-full top-0 p-2;
 
   &.scrolled {
     a {
