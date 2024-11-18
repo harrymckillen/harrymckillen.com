@@ -9,7 +9,7 @@ const buttonLabel = computed(() => (toggleMenu.value ? "Close" : "Menu"));
 const onToggleMenu = () => {
   toggleMenu.value = !toggleMenu.value;
   if (toggleMenu.value) {
-    document.body.classList.add("overflow-hidden");
+    document.documentElement.classList.add("overflow-hidden");
   } else {
     removeOverflowHidden();
   }
@@ -26,7 +26,7 @@ const checkScreenWidthAndToggleMenu = () => {
 };
 
 const removeOverflowHidden = () => {
-  document.body.classList.remove("overflow-hidden");
+  document.documentElement.classList.remove("overflow-hidden");
 };
 
 const onNavigate = () => {
@@ -55,11 +55,11 @@ onUnmounted(() => {
 <template>
   <div class="nav-wrapper" :class="{ scrolled: isScrolled }">
     <nav
-      class="flex items-center justify-center w-full my-6"
+      class="flex items-center w-full my-6"
       :class="{
         'flex-col visible fixed top-0 right-0 z-100 text-3xl space-y-4 py-8 toggled-open':
           toggleMenu,
-        'mx-auto text-lg sm:text-2xl space-x-8 sm:space-x-10 invisible sm:visible sm:w-2/3':
+        'mx-auto text-lg sm:text-2xl space-x-8 sm:space-x-10 invisible sm:visible sm:w-2/3 justify-center':
           !toggleMenu,
       }"
     >
@@ -90,7 +90,7 @@ onUnmounted(() => {
 
   nav {
     &.toggled-open {
-      @apply bg-black/20 backdrop-blur-md h-screen p-0 m-0;
+      @apply bg-black/20 backdrop-blur-md h-screen p-0 m-0 p-24;
 
       a {
         @apply m-0 p-2;
