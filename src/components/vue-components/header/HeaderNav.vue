@@ -90,7 +90,7 @@ onUnmounted(() => {
 
   nav {
     &.toggled-open {
-      @apply bg-black/20 backdrop-blur-md h-screen p-0 m-0 p-24;
+      @apply bg-black/20 backdrop-blur-md h-screen m-0 p-24;
 
       a {
         @apply m-0 p-2;
