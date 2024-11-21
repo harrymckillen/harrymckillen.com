@@ -36,19 +36,20 @@ const onNavigate = () => {
   }
 };
 
-const handleScroll = () => {
+const setIsScrolled = () => {
   isScrolled.value = window.scrollY > 0;
 };
 
 onMounted(() => {
   window.addEventListener("resize", checkScreenWidthAndToggleMenu);
-  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("scroll", setIsScrolled);
+  setIsScrolled();
   checkScreenWidthAndToggleMenu();
 });
 
 onUnmounted(() => {
   window.removeEventListener("resize", checkScreenWidthAndToggleMenu);
-  window.removeEventListener("scroll", handleScroll);
+  window.removeEventListener("scroll", setIsScrolled);
 });
 </script>
 
