@@ -1,7 +1,7 @@
 <template>
   <div
     id="about"
-    class="about-section neon-border text-center w-12/12 sm:w-3/4 lg:w-1/2 mx-4 sm:mx-auto"
+    class="about-section neon-border text-center w-12/12 sm:w-3/4 lg:w-1/2 mx-4 sm:mx-auto rounded-3xl"
   >
     <div class="text">
       <h2 class="text-4xl pt-8 mb-8 flicker-text">About</h2>

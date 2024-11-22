@@ -22,7 +22,7 @@ defineProps({
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 0;
+  top: 40px;
   width: 100%;
   height: 400px;
   display: flex;

@@ -1,4 +1,4 @@
-<script setup>
+<script setup is:inline>
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const toggleMenu = ref(false);
@@ -11,6 +11,18 @@ const onToggleMenu = () => {
   if (toggleMenu.value) {
     document.documentElement.classList.add("overflow-hidden");
   } else {
+    removeOverflowHidden();
+  }
+};
+
+const isActive = (path) => {
+  const fullpath = window.location.pathname + window.location.hash;
+  return fullpath === path;
+};
+
+const onNavigate = (path) => {
+  if (isMobile.value) {
+    toggleMenu.value = false;
     removeOverflowHidden();
   }
 };
@@ -29,27 +41,30 @@ const removeOverflowHidden = () => {
   document.documentElement.classList.remove("overflow-hidden");
 };
 
-const onNavigate = () => {
-  if (isMobile.value) {
-    toggleMenu.value = false;
-    removeOverflowHidden();
-  }
-};
-
 const setIsScrolled = () => {
   isScrolled.value = window.scrollY > 0;
+};
+
+const updateActiveLinks = () => {
+  const links = document.querySelectorAll("nav a");
+  links.forEach((link) => {
+    link.classList.toggle("active", isActive(link.getAttribute("href")));
+  });
 };
 
 onMounted(() => {
   window.addEventListener("resize", checkScreenWidthAndToggleMenu);
   window.addEventListener("scroll", setIsScrolled);
+  window.addEventListener("popstate", updateActiveLinks);
   setIsScrolled();
+  updateActiveLinks();
   checkScreenWidthAndToggleMenu();
 });
 
 onUnmounted(() => {
   window.removeEventListener("resize", checkScreenWidthAndToggleMenu);
   window.removeEventListener("scroll", setIsScrolled);
+  window.removeEventListener("popstate", updateActiveLinks);
 });
 </script>
 
@@ -64,11 +79,11 @@ onUnmounted(() => {
           !toggleMenu,
       }"
     >
-      <a href="/" @click="onNavigate()">Home</a>
-      <a href="/#about" @click="onNavigate()">About</a>
-      <a href="/#skills" @click="onNavigate()">Skills</a>
-      <a href="/#contact" @click="onNavigate()">Contact</a>
-      <a href="/blog" @click="onNavigate()">Blog</a>
+      <a href="/" @click="onNavigate">Home</a>
+      <a href="/#about" @click="onNavigate">About</a>
+      <a href="/#skills" @click="onNavigate">Skills</a>
+      <a href="/#contact" @click="onNavigate">Contact</a>
+      <a href="/blog" @click="onNavigate">Blog</a>
     </nav>
   </div>
   <button
@@ -80,12 +95,14 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" scoped>
+@import "/src/styles/global.scss";
+
 .nav-wrapper {
   @apply fixed h-16 flex z-20 w-full top-0 p-2;
 
   &.scrolled {
     a {
-      @apply sm:bg-black/20 sm:backdrop-blur-md bg-none rounded-lg;
+      @apply sm:bg-black/20 sm:backdrop-blur-md;
     }
   }
 
@@ -94,18 +111,20 @@ onUnmounted(() => {
       @apply bg-black/20 backdrop-blur-md h-screen m-0 p-24;
 
       a {
-        @apply m-0 p-2;
+        @apply m-0;
       }
     }
 
     a {
-      @apply mt-4 p-4;
+      @apply mt-4 p-4 bg-none rounded-lg;
       text-decoration: none !important;
-      border: 1px solid transparent;
+      border: 0.2rem solid transparent;
+
+      &.active,
       &:active,
       &:focus,
       &:hover {
-        text-decoration: underline !important;
+        @extend .neon-border;
       }
     }
   }
