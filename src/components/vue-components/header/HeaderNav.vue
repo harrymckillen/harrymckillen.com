@@ -19,12 +19,13 @@ const isActive = (path) => {
   const urlParts = window.location.pathname
     .split("/")
     .filter((part) => part !== "");
+  console.log(urlParts);
 
   if (urlParts.length >= 2) {
     return "/" + urlParts[0] === path;
   } else {
     const fullpath = window.location.pathname + window.location.hash;
-    return fullpath === path;
+    return fullpath === path || fullpath === path + "/";
   }
 };
 
