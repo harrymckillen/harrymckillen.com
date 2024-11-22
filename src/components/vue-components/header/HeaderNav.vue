@@ -16,8 +16,16 @@ const onToggleMenu = () => {
 };
 
 const isActive = (path) => {
-  const fullpath = window.location.pathname + window.location.hash;
-  return fullpath === path;
+  const urlParts = window.location.pathname
+    .split("/")
+    .filter((part) => part !== "");
+
+  if (urlParts.length >= 2) {
+    return "/" + urlParts[0] === path;
+  } else {
+    const fullpath = window.location.pathname + window.location.hash;
+    return fullpath === path;
+  }
 };
 
 const onNavigate = (path) => {
