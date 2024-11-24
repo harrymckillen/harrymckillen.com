@@ -1,6 +1,6 @@
 ---
 title: "The Perfect Linux Distro"
-description: "It doesn't exist in reality, but it does in ones own mind. I see a plethora of articles about choosing the perfect Linux distro. But the perfect distro is the one that works for you. Is is easy to setup and use? Does it work well with your hardware? Does it have the software you need? If the answer is yes to all of those questions, then it's the perfect distro for you."
+description: "It doesn't exist in reality, but it does in ones own mind. I see a plethora of articles about choosing the perfect Linux distro. But the perfect distro is the one that works for you. Is it easy to setup and use? Does it work well with your hardware? Does it have the software you need? If the answer is yes to all of those questions, then it's the perfect distro for you."
 pubDate: "10 Oct 2024"
 tags: ["Opinion", "Linux"]
 ---
