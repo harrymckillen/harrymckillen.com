@@ -19,7 +19,6 @@ const isActive = (path) => {
   const urlParts = window.location.pathname
     .split("/")
     .filter((part) => part !== "");
-  console.log(urlParts);
 
   if (urlParts.length >= 2) {
     return "/" + urlParts[0] === path;
