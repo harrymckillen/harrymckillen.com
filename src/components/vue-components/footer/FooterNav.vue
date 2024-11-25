@@ -33,11 +33,6 @@ defineProps({
       <div class="the-socials flex justify-center">
         <a
           class="mx-3 flex-shrink-0"
-          href="https://twitter.com/_hmck"
-          target="_blank"
-          ><img class="icon" src="/svgs/twitter.svg" alt="Twitter" /></a
-        ><a
-          class="mx-3 flex-shrink-0"
           href="http://www.linkedin.com/in/harrymckillen"
           target="_blank"
           ><img class="icon" src="/svgs/linkedin.svg" alt="LinkedIn" /></a
@@ -46,6 +41,12 @@ defineProps({
           href="https://github.com/harrymckillen"
           target="_blank"
           ><img class="icon" src="/svgs/github.svg" alt="GitHub"
+        /></a>
+        <a
+          class="mx-3 flex-shrink-0"
+          href="https://bsky.app/profile/harrymckillen.bsky.social"
+          target="_blank"
+          ><img class="icon" src="/svgs/bluesky.svg" alt="Twitter"
         /></a>
       </div>
     </section>
