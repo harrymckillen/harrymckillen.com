@@ -56,7 +56,7 @@ defineProps({
       <div class="white-triangle"></div>
     </div>
     <p class="w-full text-center mt-4 p-4">
-      &copy; Harry McKillen, 1983 &mdash; Present
+      &copy; Harry McKillen, 1983 &mdash; Present. Artisanally human crafted.
     </p>
   </footer>
 </template>
