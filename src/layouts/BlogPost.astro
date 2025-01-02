@@ -56,16 +56,16 @@ const { title, description, pubDate, updatedDate, tags, minutesRead, prevPost, n
             )
           }
           <div class="flex mt-9 justify-between">
-            <div>
+            <div class="post-navigation">
               {prevPost && (
-                <a href={`/blog/${prevPost.slug}`} class="inline-block border-2 rounded px-4 py-1 no-underline" title={prevPost.title}>
+                <a href={`/blog/${prevPost.slug}`} title={prevPost.title}>
                   &larr; Previous Post
                 </a>
               )}
             </div>
-            <div>
+            <div class="post-navigation">
               {nextPost && (
-                <a href={`/blog/${nextPost.slug}`} class="inline-block border-2 rounded px-4 py-1 no-underline" title={nextPost.title}>
+                <a href={`/blog/${nextPost.slug}`} title={nextPost.title}>
                   Next Post &rarr;
                 </a>
               )}
@@ -78,3 +78,11 @@ const { title, description, pubDate, updatedDate, tags, minutesRead, prevPost, n
     </div>
   </body>
 </html>
+
+<style lang="scss">
+  .post-navigation {
+    a {
+      @apply px-4 py-2 inline-block border-2 rounded no-underline border-white bg-none !important ;
+    }
+  }
+</style>

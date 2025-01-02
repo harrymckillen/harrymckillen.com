@@ -10,9 +10,7 @@
           Have 19+ years developing with a variety of Web Technologies. BSc. in
           Computer Science from the University of Limerick. Currently a Senior
           Frontend Engineer with
-          <a href="https://optifly.com" class="underline" target="_blank"
-            >Optifly</a
-          >.
+          <a href="https://optifly.com" target="_blank">Optifly</a>.
         </p>
         <p class="pt-4">
           Previous roles include; Software Architect, Team Lead, Web Developer,
@@ -27,5 +25,7 @@
 .about-section {
   background: #060231;
   padding: 0.4em;
+  position: relative;
+  z-index: 1;
 }
 </style>

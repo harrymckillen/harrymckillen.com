@@ -19,9 +19,7 @@ defineProps({
       <h2 class="text-4xl mb-8 flicker-text">Contact</h2>
       <p class="text-xl sm:text-2xl">
         Feel free to reach out to me at
-        <a class="underline" href="mailto:hi@harrymckillen.com"
-          >hi@harrymckillen.com</a
-        >
+        <a href="mailto:hi@harrymckillen.com">hi@harrymckillen.com</a>
       </p>
     </section>
 
