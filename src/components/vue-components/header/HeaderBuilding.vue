@@ -1,30 +1,30 @@
 <script setup>
-import { computed } from 'vue'
+import { computed } from "vue";
 
 const props = defineProps({
   size: {
     type: String,
-    default: 'md',
+    default: "md",
   },
-})
+});
 
 const numberOfWindows = computed(() => {
   switch (props.size) {
-    case 'xs':
-      return 12
-    case 'sm':
-      return 14
-    case 'lg':
-      return 27
-    case 'xl':
-      return 36
-    case 'xxl':
-      return 42
-    case 'md':
+    case "xs":
+      return 12;
+    case "sm":
+      return 14;
+    case "lg":
+      return 27;
+    case "xl":
+      return 36;
+    case "xxl":
+      return 42;
+    case "md":
     default:
-      return 24
+      return 24;
   }
-})
+});
 </script>
 
 <template>
@@ -64,10 +64,10 @@ const numberOfWindows = computed(() => {
     width: 5px;
     height: 5px;
     display: inline-block;
-    background-color: #f867fa;
+    background-color: var(--color-hot-pink);
     box-shadow:
-      0 0 10px 1px #fff,
-      0 0 20px 1px #f867fa;
+      0 0 10px 1px var(--color-default-white),
+      0 0 20px 1px var(--color-hot-pink);
     margin: 2px;
 
     &:nth-child(2n) {

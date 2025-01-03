@@ -7,7 +7,7 @@ import SkillCard from "./SkillCard.vue";
     id="skills"
     class="text-center w-12/12 sm:w-2/3 lg:w-4/5 mx-auto my-12 md:mt-14 anchor"
   >
-    <h2 class="text-4xl mb-8 flicker-text delay-animation">Skillset</h2>
+    <h2 class="text-4xl mb-8 flicker-text delay-animation">Skills</h2>
 
     <div class="skills text-xl sm:text-2xl flex flex-wrap justify-center">
       <SkillCard title="Javascript">

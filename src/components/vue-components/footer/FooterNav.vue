@@ -33,18 +33,26 @@ defineProps({
           class="mx-3 flex-shrink-0"
           href="http://www.linkedin.com/in/harrymckillen"
           target="_blank"
-          ><img class="icon" src="/svgs/linkedin.svg" alt="LinkedIn" /></a
+          ><img
+            loading="lazy"
+            class="icon"
+            src="/svgs/linkedin.svg"
+            alt="LinkedIn" /></a
         ><a
           class="mx-3 flex-shrink-0"
           href="https://github.com/harrymckillen"
           target="_blank"
-          ><img class="icon" src="/svgs/github.svg" alt="GitHub"
+          ><img loading="lazy" class="icon" src="/svgs/github.svg" alt="GitHub"
         /></a>
         <a
           class="mx-3 flex-shrink-0"
           href="https://bsky.app/profile/harrymckillen.bsky.social"
           target="_blank"
-          ><img class="icon" src="/svgs/bluesky.svg" alt="Twitter"
+          ><img
+            loading="lazy"
+            class="icon"
+            src="/svgs/bluesky.svg"
+            alt="Twitter"
         /></a>
       </div>
     </section>
@@ -65,7 +73,7 @@ defineProps({
     position: relative;
     z-index: 10;
     font-family: "Mr Dafoe", cursive;
-    color: #fff;
+    color: var(--color-default-white);
     text-shadow: 2px 2px 0 #000;
     display: flex;
     align-items: center;
@@ -92,7 +100,7 @@ defineProps({
       position: absolute;
       z-index: -1;
       clip-path: polygon(0 0, 37% 100%, 100% 0);
-      background: #f867fa;
+      background: var(--color-hot-pink);
       width: 160px;
       height: 160px;
       transform: rotate(-10deg);
@@ -104,7 +112,7 @@ defineProps({
       left: 5px;
       z-index: -2;
       clip-path: polygon(0 0, 37% 100%, 100% 0);
-      background: #fff;
+      background: var(--color-default-white);
       width: 160px;
       height: 160px;
       transform: rotate(-13deg);

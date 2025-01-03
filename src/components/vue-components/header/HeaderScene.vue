@@ -70,10 +70,10 @@ const lines = [
   top: 0;
 
   .line {
-    border-bottom: 1px solid #f867fa;
+    border-bottom: 1px solid var(--color-hot-pink);
     box-shadow:
-      0 0 2px 1px #fff,
-      0 0 10px 1px #f867fa;
+      0 0 2px 1px var(--color-default-white),
+      0 0 10px 1px var(--color-hot-pink);
     height: 1px;
   }
 
@@ -143,8 +143,8 @@ const lines = [
         border-radius: 50%;
         background-color: #04d9ff;
         box-shadow:
-          0 0 10px 1px #fff,
-          0 0 20px 1px #f867fa;
+          0 0 10px 1px var(--color-default-white),
+          0 0 20px 1px var(--color-hot-pink);
       }
     }
 
@@ -161,7 +161,7 @@ const lines = [
       border-radius: 50%;
       background: 0 0;
       box-shadow:
-        174px 116px #fff,
+        174px 116px var(--color-default-white),
         488px 85px #f1f1f1,
         1424px 386px #f1f1f1,
         76px 353px #f1f1f1,
@@ -569,7 +569,7 @@ const lines = [
       border-radius: 50%;
       background: 0 0;
       box-shadow:
-        1725px 272px #fff,
+        1725px 272px var(--color-default-white),
         2191px 361px #f1f1f1,
         1234px 316px #f1f1f1,
         2414px 337px #f1f1f1,
