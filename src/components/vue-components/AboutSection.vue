@@ -1,4 +1,6 @@
 <script setup>
+import { CURRENT_COMPANY, CURRENT_TITLE } from "../../consts";
+
 const currentYear = new Date().getFullYear();
 const yearsExperience = currentYear - 2002;
 </script>
@@ -15,8 +17,8 @@ const yearsExperience = currentYear - 2002;
           I'm a Frontend Engineer from Ireland. I have
           {{ yearsExperience }} years experience developing with a variety of
           different Web Technologies. I have a BSc. in Computer Science from the
-          University of Limerick. Currently a Senior Frontend Engineer with
-          <a href="https://optifly.com" target="_blank">Optifly</a>.
+          University of Limerick. Currently a {{ CURRENT_TITLE }} with
+          {{ CURRENT_COMPANY }}.
         </p>
         <p class="pt-4">
           Previous roles include; Software Architect, Team Lead, Frontend

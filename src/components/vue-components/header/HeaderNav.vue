@@ -103,7 +103,7 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" scoped>
-@import "/src/styles/global.scss";
+@use "/src/styles/global.scss";
 
 .nav-wrapper {
   @apply fixed h-16 flex z-20 w-full top-0 p-2;
