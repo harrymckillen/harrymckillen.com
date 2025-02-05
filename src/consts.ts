@@ -5,5 +5,5 @@ export const SITE_TITLE = "Harry McKillen";
 export const SITE_DESCRIPTION =
   "Harry McKillen, Web Developer, Geek, Want to be Games Developer. Dad.";
 
-export const CURRENT_TITLE = "Senior Frontend Engineer";
-export const CURRENT_COMPANY = "Optifly";
+export const CURRENT_TITLE = "Application Security Developer";
+export const CURRENT_COMPANY = "Laya Healthcare";

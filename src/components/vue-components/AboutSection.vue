@@ -21,7 +21,7 @@ const yearsExperience = currentYear - 2002;
           {{ CURRENT_COMPANY }}.
         </p>
         <p class="pt-4">
-          Previous roles include; Software Architect, Team Lead, Frontend
+          Previous roles include; Software Architect, Team Lead, Senior Frontend
           Engineer, Freelance Web Developer.
         </p>
       </div>
