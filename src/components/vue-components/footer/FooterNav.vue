@@ -46,7 +46,7 @@ defineProps({
         /></a>
         <a
           class="mx-3 flex-shrink-0"
-          href="https://bsky.app/profile/harrymckillen.bsky.social"
+          href="https://bsky.app/profile/harrymckillen.com"
           target="_blank"
           ><img
             loading="lazy"
