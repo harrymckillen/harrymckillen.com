@@ -10,10 +10,10 @@ import SkillCard from "./SkillCard.vue";
     <h2 class="text-4xl mb-8 flicker-text delay-animation">Skills</h2>
 
     <div class="skills text-xl sm:text-2xl flex flex-wrap justify-center">
-      <SkillCard title="Javascript">
-        ES5/6, Angular / AngularJS / VueJS / NodeJS / Webpack / Babel /
+      <SkillCard title="Javascript ">
+        ES5/6, Angular / AngularJS / VueJS / NodeJS / NestJS / Webpack / Vite / Rollup / Babel /
         Typescript / Cypress / Jest / Mocha / Karma / Jasmine / Storybook. And
-        many more JS libraries over the years.
+        many MANY more JS libraries over the years.
       </SkillCard>
 
       <SkillCard title="HTML">
@@ -31,13 +31,13 @@ import SkillCard from "./SkillCard.vue";
       <SkillCard title="Design">
         I have a keen interest in design, and have a good eye for detail. I
         enjoy working with designers to bring their vision to life, and have
-        experience working with design systems.
+        experience working with and building design systems.
       </SkillCard>
 
       <SkillCard title="Backend">
-        Frontend Tech is my forte, though I have working knowledge of Python
-        (Django) and PHP, and numerous other ones I've used sparingly over the
-        years, C#, Java, C++, etc. Various DBs, Mongo, MySQL, Postgres, etc.
+        Frontend Tech more recently is my forte, though I have experience with Python
+        (Django), NodeJS and PHP, and numerous other ones I've used sparingly over the
+        years, e.g. C#, Java, C++, etc. Various DBs, Mongo, MySQL, Postgres, etc.
       </SkillCard>
 
       <SkillCard title="Special Interests">
