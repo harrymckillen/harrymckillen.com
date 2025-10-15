@@ -1,13 +1,13 @@
 ---
 title: "The Perfect Linux Distro"
-description: "It doesn't exist in reality, but it does in ones own mind. I see a plethora of articles about choosing the perfect Linux distro. But the perfect distro is the one that works for you. Is it easy to setup and use? Does it work well with your hardware? Does it have the software you need? If the answer is yes to all of those questions, then it's the perfect distro for you."
+description: "It doesn't exist in reality. I see a plethora of articles about choosing the perfect Linux distro, and the many many threads on forums extolling the virtues of why people chose a particular one. The perfect distro is the one that works for you. For me, my key questions to interogate would be; Is it easy to setup and use? Does it work well with your hardware? Does it have the software you need? If the answer is yes to all of those questions, then it's a perfect distro for you."
 pubDate: "10 Oct 2024"
 tags: ["Opinion", "Linux"]
 ---
 
-I have been using Linux for over 20 years now. I have used many different distributions in that time. I have used SuSE, Red Hat, Fedora, CentOS, Ubuntu, Linux Mint, RaspianOS and lastly, Pop_OS! I have also trialed a few others in between, like Manjaro.
+I have been using Linux for over 20 years now. I have used many different distributions in that time. I have used SuSE, Red Hat, Fedora, CentOS, Ubuntu, Linux Mint, RaspianOS and lastly, Pop_OS! I have also trialed a few others in between, like Manjaro and maybe a few others I can't remember. I've read about loads of different ones throughout the years too.
 
-I have never tried Arch BTW. I like the premise, but I don't think I'd have the patience to set it up. Prior to switching to Pop_OS! I was using Linux Mint. I have an older personal laptop from 2012, and it worked great on that.
+I have never tried Arch BTW or Gentoo. I like the premise, but I don't think I'd have the patience to set it up. Prior to switching to Pop_OS! I was using Linux Mint. I have an older personal laptop from 2012, and it worked great on that.
 
 In 2022, I got a new job, and the company allowed us to select our own laptop and spec. I had heard of System76 before, and I liked the idea of a company that made their own hardware and software. I also liked the idea of a curated Nvidia driver experience, which would save me the hassle of trying to get it to work on my own. So the first thing I did when I got it was to wipe Windows, and install Pop_OS! At the time of writing, I am still using 22.04, and it's been great.
 
