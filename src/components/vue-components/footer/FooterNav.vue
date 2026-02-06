@@ -16,7 +16,7 @@ defineProps({
       v-if="showContact"
       class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto"
     >
-      <h2 class="text-4xl mb-8 flicker-text">Contact</h2>
+      <h2>Contact</h2>
       <p class="text-xl sm:text-2xl">
         Feel free to reach out to me at
         <a href="mailto:hi@harrymckillen.com">hi@harrymckillen.com</a>
@@ -72,7 +72,7 @@ defineProps({
   .made-80s {
     position: relative;
     z-index: 10;
-    font-family: "Mr Dafoe", cursive;
+    font-family: var(--font-heading);
     color: var(--color-default-white);
     text-shadow: 2px 2px 0 #000;
     display: flex;
@@ -88,12 +88,13 @@ defineProps({
     .made {
       margin-top: 0;
       line-height: 1;
-      font-size: 1.75em;
+      font-size: 1.25em;
     }
 
     .eighties {
-      font-family: Monoton, cursive;
+      font-family: var(--font-subheading);
       font-size: 4.25em;
+      line-height: 1;
     }
 
     .pink-triangle {

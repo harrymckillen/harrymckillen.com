@@ -1,5 +1,10 @@
 <script setup>
+import { computed } from "vue";
 import { CURRENT_COMPANY, CURRENT_TITLE } from "../../..//consts";
+const titleArticle = computed(() => {
+  const firstLetter = CURRENT_TITLE.charAt(0).toLowerCase();
+  return "aeiou".includes(firstLetter) ? "an" : "a";
+});
 </script>
 
 <template>
@@ -14,11 +19,11 @@ import { CURRENT_COMPANY, CURRENT_TITLE } from "../../..//consts";
     <div>
       <h4 class="text-xl font-semibold my-4">About the author</h4>
       <p>
-        My name is Harry. I'm a {{ CURRENT_TITLE }} with {{ CURRENT_COMPANY }}.
-        I like to mess around with code (and Linux) in my spare time and I
-        occasionally try to write about it. I like a lot of other things away
-        from the Internet and Work, like Coffee, Books, TV, Movies, Music and
-        Gaming.
+        My name is Harry. I'm {{ titleArticle }} {{ CURRENT_TITLE }} with
+        {{ CURRENT_COMPANY }}. I like to mess around with code (and Linux) in my
+        spare time and I occasionally try to write about it. I like a lot of
+        other things away from the Internet and Work, like Coffee, Books, TV,
+        Movies, Music and Gaming.
       </p>
     </div>
   </div>

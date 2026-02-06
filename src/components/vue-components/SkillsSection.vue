@@ -7,43 +7,48 @@ import SkillCard from "./SkillCard.vue";
     id="skills"
     class="text-center w-12/12 sm:w-2/3 lg:w-4/5 mx-auto my-12 md:mt-14 anchor"
   >
-    <h2 class="text-4xl mb-8 flicker-text delay-animation">Skills</h2>
+    <h2>Skills</h2>
 
     <div class="skills text-xl sm:text-2xl flex flex-wrap justify-center">
-      <SkillCard title="Javascript ">
-        ES5/6, Angular / AngularJS / VueJS / NodeJS / NestJS / Webpack / Vite / Rollup / Babel /
-        Typescript / Cypress / Jest / Mocha / Karma / Jasmine / Storybook. And
-        many MANY more JS libraries over the years.
+      <SkillCard title="Javascript & Typescript">
+        I've been working with JavaScript for over 20 years. Deep expertise in
+        modern frameworks like Vue, Angular, and Astro, along with the entire
+        build toolchain (Vite, Webpack, Rollup). Comprehensive testing
+        experience with Cypress, Jest, Playwright, and the classics. I've built
+        everything from component libraries to complex SPAs.
       </SkillCard>
 
-      <SkillCard title="HTML">
-        Solid HTML4/5 knowledge. WAI-AA Accessibility with ARIA land-marking,
-        testing on NVDA, Jaws, VoiceOver and TalkBack. Email Templates
-        (shudder).
+      <SkillCard title="HTML & Accessibility">
+        Solid HTML5 foundation with a strong focus on semantic markup.
+        Passionate about web accessibility—I build to WCAG 2.1 AA standards and
+        regularly test with NVDA, JAWS, VoiceOver, and TalkBack. I believe
+        accessible web experiences aren't optional; they're fundamental. Yes,
+        I've even built responsive email templates.
       </SkillCard>
 
-      <SkillCard title="CSS">
-        I've been using CSS since well before the before times of border-radius,
-        Flexbox & CSS Grid using IE version specific hacks. Experience using
-        Bootstrap, Tailwind CSS etc. Pre-processors such as LESS and SASS.
+      <SkillCard title="CSS & Design">
+        I've been writing CSS since the dark ages of IE6-specific hacks and
+        table layouts. Expert in modern CSS (Grid, Flexbox, Container Queries),
+        preprocessors (SASS, LESS), and utility frameworks (Tailwind,
+        Bootstrap). I have a strong eye for design and love collaborating with
+        designers to build pixel-perfect, performant interfaces and robust
+        design systems.
       </SkillCard>
 
-      <SkillCard title="Design">
-        I have a keen interest in design, and have a good eye for detail. I
-        enjoy working with designers to bring their vision to life, and have
-        experience working with and building design systems.
+      <SkillCard title="Backend & Databases">
+        While frontend is my specialty, I'm comfortable across the stack.
+        Experience with Node.js/NestJS, Python (Django), PHP, and dabbling in
+        C#, Java, Lua, Rust, and C++ when needed. Familiar with various
+        databases including PostgreSQL, MongoDB, and MySQL. I can build and
+        consume APIs, optimise queries, and understand the full request
+        lifecycle.
       </SkillCard>
 
-      <SkillCard title="Backend">
-        Frontend Tech more recently is my forte, though I have experience with Python
-        (Django), NodeJS and PHP, and numerous other ones I've used sparingly over the
-        years, e.g. C#, Java, C++, etc. Various DBs, Mongo, MySQL, Postgres, etc.
-      </SkillCard>
-
-      <SkillCard title="Special Interests">
-        In addition to my main skillset, I'm interested in Web Accessibility,
-        Web Performance, Web Security, Web Standards, Web Design, UX, UI, Design
-        Systems, CI/CD, etc. As well as improving overall developer experience.
+      <SkillCard title="What Sets Me Apart">
+        Beyond the code, I'm deeply invested in web performance, security best
+        practices, and developer experience. I've architected CI/CD pipelines,
+        championed code quality standards. I'm a strong advocate for
+        accessibility and inclusive design.
       </SkillCard>
     </div>
   </section>
@@ -51,11 +56,35 @@ import SkillCard from "./SkillCard.vue";
 
 <style lang="scss" scoped>
 .skills {
-  > div {
-    width: 45%;
+  gap: 2rem;
 
-    @media screen and (max-width: 1200px) {
-      width: 100%;
+  > div {
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 280px;
+
+    @media screen and (max-width: 768px) {
+      flex: 1 1 100%;
+    }
+
+    // Stagger animation delays for each SkillCard
+    &:nth-child(1) ::v-deep(h3) {
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(2) ::v-deep(h3) {
+      animation-delay: 0.4s;
+    }
+
+    &:nth-child(3) ::v-deep(h3) {
+      animation-delay: 0.6s;
+    }
+
+    &:nth-child(4) ::v-deep(h3) {
+      animation-delay: 0.8s;
+    }
+
+    &:nth-child(5) ::v-deep(h3) {
+      animation-delay: 1s;
     }
   }
 }

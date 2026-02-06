@@ -29,8 +29,9 @@ defineProps({
   flex-direction: column;
 
   h1 {
-    font-family: "Mr Dafoe", cursive;
-    font-size: 4.5rem;
+    font-family: var(--font-heading);
+    font-size: 3.65rem;
+    font-style: italic;
     color: #eb219b;
     -webkit-text-fill-color: #fd5afa;
     text-shadow: -2px -2px 0 #ffbaf2;
@@ -49,7 +50,11 @@ defineProps({
     }
 
     @media screen and (max-width: 900px) {
-      font-size: 4.75rem;
+      font-size: 3.5rem;
+    }
+
+    @media screen and (max-width: 300px) {
+      font-size: 2.5rem;
     }
   }
 }

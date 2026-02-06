@@ -1,0 +1,11 @@
+Model Information:
+* title:	Delorean-dmc-12
+* source:	https://sketchfab.com/3d-models/delorean-dmc-12-6d5569d1bb8648beb744e88a99f36752
+* author:	cadwalader (https://sketchfab.com/cadwalader)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Delorean-dmc-12" (https://sketchfab.com/3d-models/delorean-dmc-12-6d5569d1bb8648beb744e88a99f36752) by cadwalader (https://sketchfab.com/cadwalader) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

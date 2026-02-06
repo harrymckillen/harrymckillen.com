@@ -5,6 +5,8 @@
 :root {
   --color-hot-pink: #f867fa;
   --color-default-white: #ffffff;
+  --font-heading: "Road Rage", cursive;
+  --font-subheading: "Hyper Vyper", sans;
 }
 
 @media (min-width: 768px) {
@@ -27,10 +29,6 @@
   .flicker-text {
     animation: none;
   }
-}
-
-.delay-animation {
-  animation-delay: 1.5s;
 }
 
 @keyframes flicker {
@@ -59,6 +57,11 @@
 }
 pre {
   font-family: Inconsolata, monospace;
+}
+
+strong {
+  color: var(--color-hot-pink);
+  font-size: 1.1em;
 }
 
 a {
@@ -120,6 +123,16 @@ body {
   font-family: Inconsolata, monospace;
   font-size: calc(15px + 0.390625vw);
 
+  ::selection {
+    background-color: var(--color-hot-pink);
+    color: var(--color-default-white);
+  }
+
+  ::-moz-selection {
+    background-color: var(--color-hot-pink);
+    color: var(--color-default-white);
+  }
+
   .neon-border {
     border: 0.2rem solid var(--color-default-white);
     box-shadow:
@@ -140,23 +153,26 @@ body {
     }
 
     h2 {
-      font-family: "Mr Dafoe", cursive;
+      font-family: var(--font-subheading);
+      text-transform: uppercase;
       color: var(--color-default-white);
-      text-shadow:
-        0 0 7px var(--color-default-white),
-        0 0 10px var(--color-default-white),
-        0 0 21px var(--color-default-white),
-        0 0 42px var(--color-hot-pink),
-        0 0 82px var(--color-hot-pink),
-        0 0 92px var(--color-hot-pink),
-        0 0 102px var(--color-hot-pink),
-        0 0 151px var(--color-hot-pink);
-      transform: rotate(-5deg);
-      margin-bottom: 1em;
+      font-size: 2.75rem;
+      line-height: 1;
+      // text-shadow:
+      //   0 0 7px var(--color-default-white),
+      //   0 0 10px var(--color-default-white),
+      //   0 0 21px var(--color-default-white),
+      //   0 0 42px var(--color-hot-pink),
+      //   0 0 82px var(--color-hot-pink),
+      //   0 0 92px var(--color-hot-pink),
+      //   0 0 102px var(--color-hot-pink),
+      //   0 0 151px var(--color-hot-pink);
+      // transform: rotate(-5deg);
+      margin-bottom: 0.25em;
     }
 
     .main-body {
-      margin-top: 480px;
+      margin-top: 600px;
     }
   }
 
@@ -210,4 +226,26 @@ body {
       }
     }
   }
+}
+
+@font-face {
+  font-family: "Road Rage";
+  src:
+    url("/fonts/Road_Rage.woff2") format("woff2"),
+    url("/fonts/Road_Rage.woff") format("woff"),
+    url("/fonts/Road_Rage.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hyper Vyper";
+  src:
+    url("/fonts/hypervipergrad.woff2") format("woff2"),
+    url("/fonts/hypervipergrad.woff") format("woff"),
+    url("/fonts/hypervipergrad.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
