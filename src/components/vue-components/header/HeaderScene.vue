@@ -16,33 +16,37 @@ const loadDelorean = () => {
     (gltf) => {
       delorean = gltf.scene;
 
-      // Calculate the bounding box to see actual size
-      // const bbox = new THREE.Box3().setFromObject(delorean);
-
       delorean.scale.set(0.02, 0.02, 0.02);
-
-      delorean.position.set(-4.5, -12, -9); // Right in front of camera
+      delorean.position.set(-4.5, -11.85, -9); // Right in front of camera
       delorean.rotation.y = Math.PI * 1.5; // Rotate towards cityscape
 
-      // Debug: Check what materials are loaded
       delorean.traverse((child) => {
         if (child.isMesh) {
-          console.log("Material:", child.material.name);
-          console.log("Material type:", child.material.type);
-          console.log("Has map:", child.material.map);
-          console.log("Has metalness map:", child.material.metalnessMap);
-          console.log("Has normal map:", child.material.normalMap);
-          console.log("Metalness:", child.material.metalness);
-          console.log("Roughness:", child.material.roughness);
+          console.log("Material:", child.material.name, child.material.type);
 
-          // Ensure metallic materials reflect light properly
-          if (child.material.type === "MeshStandardMaterial") {
+          // Handle both MeshStandardMaterial and other materials
+          if (child.material.type === "MeshStandardMaterial" ||
+            child.material.type === "MeshPhysicalMaterial") {
             child.material.needsUpdate = true;
-            // Boost metalness and adjust roughness
-            child.material.metalness = 0.4;
+
+            // Maximum metalness and minimum roughness for chrome
+            child.material.metalness = 0.9;
             child.material.roughness = 0.1;
+            child.material.envMapIntensity = 1.2;
+          } else {
+            // Convert non-PBR materials to MeshStandardMaterial
+            const oldMaterial = child.material;
+            child.material = new THREE.MeshStandardMaterial({
+              color: oldMaterial.color || 0xcccccc,
+              metalness: 1.0,
+              roughness: 0.05,
+              envMapIntensity: 2.0,
+              map: oldMaterial.map,
+              normalMap: oldMaterial.normalMap,
+            });
           }
 
+          child.receiveShadow = true;
           child.matrixAutoUpdate = false;
           child.updateMatrix();
         }
@@ -54,25 +58,6 @@ const loadDelorean = () => {
 
       scene.add(delorean);
 
-      // Add spotlight on the DeLorean
-      const spotLight = new THREE.SpotLight(0xffffff, 2);
-      spotLight.position.set(-4.5, 5, -5); // Above and in front of DeLorean
-      spotLight.target = delorean;
-      spotLight.angle = Math.PI / 6; // 30 degree cone
-      spotLight.penumbra = 0.3; // Soft edge
-      spotLight.distance = 50;
-      spotLight.castShadow = false;
-      scene.add(spotLight);
-
-      // Optional: Add a colored rim light for vaporwave effect
-      const rimLight = new THREE.PointLight(0xf867fa, 1.5, 20); // Pink light
-      rimLight.position.set(-4.5, -10, -12); // Behind and below DeLorean
-      scene.add(rimLight);
-
-      // Optional: Add cyan accent light from the side
-      const accentLight = new THREE.PointLight(0x00ffff, 1, 15); // Cyan light
-      accentLight.position.set(-8, -10, -9); // To the left
-      scene.add(accentLight);
     },
     (progress) => {
       console.log(
@@ -108,8 +93,53 @@ const initScene = () => {
   renderer.setSize(window.innerWidth, 680);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  // Enable physically correct lighting
-  renderer.physicallyCorrectLights = true;
+  // Use tone mapping for better metallic appearance
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.2;
+
+  // CREATE ENVIRONMENT MAP for metallic reflections
+  const pmremGenerator = new THREE.PMREMGenerator(renderer);
+
+  // Create a colorful vaporwave environment
+  const envScene = new THREE.Scene();
+  envScene.background = new THREE.Color(0x808080);
+
+
+  // Create a gradient using a shader material for the environment
+  const envGeometry = new THREE.SphereGeometry(500, 60, 40);
+  const envMaterial = new THREE.ShaderMaterial({
+    side: THREE.BackSide,
+    vertexShader: `
+    varying vec3 vWorldPosition;
+    void main() {
+      vec4 worldPosition = modelMatrix * vec4(position, 1.0);
+      vWorldPosition = worldPosition.xyz;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `,
+    fragmentShader: `
+    varying vec3 vWorldPosition;
+    void main() {
+      float h = normalize(vWorldPosition).y;
+      // Gradient from cyan (bottom) to pink (top)
+      vec3 topColor = vec3(0.97, 0.4, 0.98); // Pink
+      vec3 bottomColor = vec3(0.0, 1.0, 1.0); // Cyan
+      vec3 color = mix(bottomColor, topColor, h * 0.5 + 0.5);
+      gl_FragColor = vec4(color * 2.0, 1.0); // Multiply by 2 for brightness
+    }
+  `
+  });
+
+  const envSphere = new THREE.Mesh(envGeometry, envMaterial);
+  envScene.add(envSphere);
+
+
+  // Generate environment map
+  const envMap = pmremGenerator.fromScene(envScene).texture;
+  scene.environment = envMap;
+
+  pmremGenerator.dispose();
+
 
   // Create starfield
   createStars();
@@ -137,9 +167,21 @@ const initScene = () => {
   floor.position.y = -3.01; // Slightly below the grid
   scene.add(floor);
 
-  // Lighting
-  const ambientLight = new THREE.AmbientLight(0xffffff, 5);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 3); // Reduced from 13
   scene.add(ambientLight);
+
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 10);
+  directionalLight.position.set(5, 10, 5);
+  scene.add(directionalLight);
+
+  const directionalLight2 = new THREE.DirectionalLight(0xf867fa, 40);
+  directionalLight2.position.set(0, 5, 0);
+  scene.add(directionalLight2);
+
+  const directionalLight3 = new THREE.DirectionalLight(0x00ffff, 15);
+  directionalLight3.position.set(-5, 3, -5);
+  scene.add(directionalLight3);
+
 
   // Start animation
   animate();
@@ -327,7 +369,6 @@ const createCityscape = () => {
 
   // Create 40 buildings positioned in a condensed grid pattern
   const numBuildings = 40;
-  const rows = 4; // 4 rows deep
   const buildingsPerRow = 10; // 10 buildings per row
 
   for (let i = 0; i < numBuildings; i++) {
@@ -377,8 +418,6 @@ const createCityscape = () => {
             color: Math.random() > 0.5 ? 0xffffff : 0xf867fa, // White or pink
             transparent: true,
             opacity: 0.8,
-            // emissive: Math.random() > 0.5 ? 0xffffff : 0xf867fa,
-            // emissiveIntensity: 0.5,
           });
 
           const window = new THREE.Mesh(windowGeometry, windowMaterial);
@@ -427,10 +466,8 @@ const animate = () => {
     stars.rotation.z = time * 0.05; // Slow rotation
   }
 
-  // Camera subtle movement
   camera.position.y = 4 + Math.sin(time * 0.3) * 0.3;
-
-  camera.lookAt(0, 2, -20); // Original lookAt
+  camera.lookAt(0, 2, -20);
 
   renderer.render(scene, camera);
 };
@@ -445,8 +482,6 @@ const handleResize = () => {
 
 onMounted(() => {
   initScene();
-  // console.log("Canvas ref on mounted:", canvasRef.value);
-  // simpleExample();
   window.addEventListener("resize", handleResize);
 });
 
@@ -477,16 +512,13 @@ onBeforeUnmount(() => {
   z-index: 0;
   top: 0;
   overflow: hidden;
-  // background: #000;
 
   .webgl-canvas {
     width: 100%;
     height: 100%;
     display: block;
-    // border: 1px solid red;
   }
 
-  // Add gradient mask to blend edges
   &::after {
     content: "";
     position: absolute;
@@ -499,7 +531,6 @@ onBeforeUnmount(() => {
     z-index: 1;
   }
 
-  // Optional: Add side blur/fade
   &::before {
     content: "";
     position: absolute;

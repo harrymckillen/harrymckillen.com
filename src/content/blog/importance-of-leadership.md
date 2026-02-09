@@ -5,15 +5,15 @@ pubDate: "6 Feb 2026"
 tags: ["Opinion", "Leadership"]
 ---
 
-The bottom line is, yes, leadership matters. It is the one thing that will generally make me question staying in a company, if the leadership team you interact with regularly is poor, and you lack faith in their vision and decision-making capabilities, that will entirely colour your view of the company. An oft cited stat is that something like 90% of people leave a company due to a bad manager.
+The bottom line is, yes, leadership matters. It is the one thing that will generally make me question staying in a company, because if the leadership team you interact with regularly is poor, and you lack faith in their vision and decision-making capabilities, that will entirely colour my view of the company. An oft cited stat is that something like 90% of people leave a company due to a bad leadership.
 
-I have worked with a number of people in leadership positions, and it is important you as an team member understand what you value most in leadership ability. You can learn what you don't like from having bad managers, as I have, just as much as what you value from a great leader.
+I have worked with a number of people in leadership positions, and it is important you as an team member understand what you value most in their leadership ability. You can learn what you don't like from having bad managers, as I have, just as much as what you value from a great leader.
 
-For me, it boils down to whether on balance that they value your contributions and they trust your experience and judgement. Nothing shakes my confidence faster than when a leader ignores your contribution. I do not mean absolutely everything, there are certain things which leaders need to balance to keep people onside, but occasionally a Rubicon is crossed where a seriously bad decision is being made contrary to all available evidence, and your advice. Generally it's at this juncture, I tend to look further afield as my faith in a persons leadership has taken a real nose dive.
+For me, it boils down to whether on balance they value your contributions and they trust your experience and judgement. Nothing shakes my confidence faster than when a leader ignores your contribution. I do not mean they had to completely go over the top in supporting everything you suggest, as there are certain things which leaders need to balance to keep keep the overall team and stakeholders happy. However, naturally a Rubicon is crossed eventually people grow tired of where an organisation is headed in terms of direction. This can occur when a seriously bad decision is being made contrary to all available evidence, and your advice. Generally it's at this juncture, I tend to look further afield, because as much as you can be a team player, if you feel it is going in a bad direction, it can take the gloss off your time in a company.
 
 ## Bosses vs. Leaders
 
-There is a clearcut distinction between working with or for someone. It is my belief that people who treat you as subordinate to them and remind you constantly of that fact are generally not great people to work for. They care about their stature and title, and conduct themselves in such a manner that you know you should be beneath them.
+There is a clearcut distinction between working *with* or *for* someone. It is my belief that people who treat you as subordinate to them and remind you constantly of that fact are generally not great people to work for. They care about their stature and title, and conduct themselves in such a manner that you know you should be beneath them.
 
 Leaders listen and learn how best to lead their team. They understand that everyone's personality differs, and how to get people to buy-in and how they can engage people within a team. I have worked with CTO's who talk to you as if you're a person, no heirs & graces.
 

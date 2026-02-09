@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <div class="skill-card mb-6 p-4">
-    <h3 class="text-2xl mb-2 flicker-text">{{ title }}</h3>
+    <h3 class="text-2xl mb-4 flicker-text">{{ title }}</h3>
     <p>
       <slot />
     </p>
