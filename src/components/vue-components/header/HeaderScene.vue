@@ -22,7 +22,6 @@ const loadDelorean = () => {
 
       delorean.traverse((child) => {
         if (child.isMesh) {
-          console.log("Material:", child.material.name, child.material.type);
 
           // Handle both MeshStandardMaterial and other materials
           if (child.material.type === "MeshStandardMaterial" ||
