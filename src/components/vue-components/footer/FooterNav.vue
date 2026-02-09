@@ -12,10 +12,7 @@ defineProps({
 </script>
 <template>
   <footer id="contact" class="float-left w-full anchor footer-nav">
-    <section
-      v-if="showContact"
-      class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto"
-    >
+    <section v-if="showContact" class="text-center w-10/12 sm:w-2/3 lg:w-3/5 mx-auto">
       <h2>Contact</h2>
       <p class="text-xl sm:text-2xl">
         Feel free to reach out to me at
@@ -23,37 +20,15 @@ defineProps({
       </p>
     </section>
 
-    <section
-      v-if="showSocials"
-      class="w-2/3 md:w-1/4 mx-auto text-center mt-4 mb-6"
-    >
+    <section v-if="showSocials" class="w-2/3 md:w-1/4 mx-auto text-center mt-4 mb-6">
       <h3 class="my-4">or via <span class="sr-only">Social Media</span></h3>
       <div class="the-socials flex justify-center">
-        <a
-          class="mx-3 flex-shrink-0"
-          href="http://www.linkedin.com/in/harrymckillen"
-          target="_blank"
-          ><img
-            loading="lazy"
-            class="icon"
-            src="/svgs/linkedin.svg"
-            alt="LinkedIn" /></a
-        ><a
-          class="mx-3 flex-shrink-0"
-          href="https://github.com/harrymckillen"
-          target="_blank"
-          ><img loading="lazy" class="icon" src="/svgs/github.svg" alt="GitHub"
-        /></a>
-        <a
-          class="mx-3 flex-shrink-0"
-          href="https://bsky.app/profile/harrymckillen.com"
-          target="_blank"
-          ><img
-            loading="lazy"
-            class="icon"
-            src="/svgs/bluesky.svg"
-            alt="Twitter"
-        /></a>
+        <a class="mx-3 flex-shrink-0" href="http://www.linkedin.com/in/harrymckillen" target="_blank"><img
+            loading="lazy" class="icon" src="/svgs/linkedin.svg" alt="LinkedIn" /></a><a class="mx-3 flex-shrink-0"
+          href="https://github.com/harrymckillen" target="_blank"><img loading="lazy" class="icon"
+            src="/svgs/github.svg" alt="GitHub" /></a>
+        <a class="mx-3 flex-shrink-0" href="https://bsky.app/profile/harrymckillen.com" target="_blank"><img
+            loading="lazy" class="icon" src="/svgs/bluesky.svg" alt="Twitter" /></a>
       </div>
     </section>
     <div class="made-80s mx-auto mt-16">
@@ -93,8 +68,9 @@ defineProps({
 
     .eighties {
       font-family: var(--font-subheading);
-      font-size: 4.25em;
+      font-size: 5.75em;
       line-height: 1;
+      margin-top: -14px;
     }
 
     .pink-triangle {
@@ -119,12 +95,14 @@ defineProps({
       transform: rotate(-13deg);
     }
   }
+
   .the-socials {
     .icon {
       width: 6.5vw;
       height: 6.5vw;
       display: inline-block;
       padding: 0 0.5em;
+
       @media screen and (max-width: 640px) {
         width: 64px;
         height: 64px;

@@ -13,7 +13,7 @@ For me, it boils down to whether on balance they value your contributions and th
 
 ## Bosses vs. Leaders
 
-There is a clearcut distinction between working *with* or *for* someone. It is my belief that people who treat you as subordinate to them and remind you constantly of that fact are generally not great people to work for. They care about their stature and title, and conduct themselves in such a manner that you know you should be beneath them.
+There is a clearcut distinction between working _with_ or _for_ someone. It is my belief that people who treat you as subordinate to them and remind you constantly of that fact are generally not great people to work for. They care about their stature and title, and conduct themselves in such a manner that you know you should be beneath them.
 
 Leaders listen and learn how best to lead their team. They understand that everyone's personality differs, and how to get people to buy-in and how they can engage people within a team. I have worked with CTO's who talk to you as if you're a person, no heirs & graces.
 
@@ -23,4 +23,4 @@ Bosses care about optics, short-term results, and not exactly how they are achie
 
 Find yourself a leader who values your contributions, and focuses on resolving issues rather than focusing on who causes them. Sure, take key learnings on how to avoid mistakes in the future, but don't put up with a boss who rules with a culture of fear of making a mistake. I've been lucky and unlucky in equal measure.
 
-However, with each person I have worked with, I have either appreciated what they brought to the table in terms of leadership and learned from it, or learned what I didn't like about their style, and have tried to avoid those mistakes when I have been in leadership positions.
+However, with each person I have worked with, I have either appreciated what they brought to the table in terms of leadership and learned from it. That can taking positive and negative aspects of their leadership styles, and I have tried to avoid those mistakes when I have been in leadership positions.
