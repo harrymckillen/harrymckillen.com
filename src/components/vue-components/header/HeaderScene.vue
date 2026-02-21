@@ -7,6 +7,8 @@ const canvasRef = ref(null);
 let scene, camera, renderer, animationId;
 let grid, sun, stars, delorean;
 let time = 0;
+let deloreanAnimationProgress = 0;
+let deloreanAnimationComplete = false;
 
 const loadDelorean = () => {
   const loader = new GLTFLoader();
@@ -17,7 +19,8 @@ const loadDelorean = () => {
       delorean = gltf.scene;
 
       delorean.scale.set(0.02, 0.02, 0.02);
-      delorean.position.set(-4.5, -11.85, -9); // Right in front of camera
+      // Start in foreground, will animate to final position
+      delorean.position.set(-4.5, -11.85, 10);
       delorean.rotation.y = Math.PI * 1.5; // Rotate towards cityscape
 
       delorean.traverse((child) => {
@@ -51,18 +54,11 @@ const loadDelorean = () => {
         }
       });
 
-      // Freeze the matrix to prevent unnecessary updates
-      delorean.matrixAutoUpdate = false;
-      delorean.updateMatrix();
-
       scene.add(delorean);
 
     },
     (progress) => {
-      console.log(
-        "Loading DeLorean:",
-        (progress.loaded / progress.total) * 100 + "%",
-      );
+      // Progress callback - optional for debugging
     },
     (error) => {
       console.error("Error loading DeLorean:", error);
@@ -463,6 +459,27 @@ const animate = () => {
   // Slowly rotate stars in background (behind sun)
   if (stars) {
     stars.rotation.z = time * 0.05; // Slow rotation
+  }
+
+  // Animate DeLorean driving into scene
+  if (delorean && !deloreanAnimationComplete) {
+    deloreanAnimationProgress += 0.008; // Speed of drive-in (higher = faster)
+
+    if (deloreanAnimationProgress >= 1) {
+      deloreanAnimationProgress = 1;
+      deloreanAnimationComplete = true;
+      // Freeze matrix after animation completes for optimization
+      delorean.matrixAutoUpdate = false;
+      delorean.updateMatrix();
+    }
+
+    // Ease-out animation for smooth deceleration
+    const easeProgress = 1 - Math.pow(1 - deloreanAnimationProgress, 3);
+
+    // Interpolate from starting position (z=10) to final position (z=-9)
+    const startZ = 10;
+    const endZ = -9;
+    delorean.position.z = startZ + (endZ - startZ) * easeProgress;
   }
 
   camera.position.y = 4 + Math.sin(time * 0.3) * 0.3;

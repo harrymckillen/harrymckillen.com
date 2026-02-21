@@ -23,6 +23,10 @@
 
 .flicker-text {
   animation: flicker 1.5s infinite alternate;
+
+  @media (max-width: 767px) {
+    animation: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
