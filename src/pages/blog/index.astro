@@ -12,6 +12,8 @@ const posts = (await getCollection("blog")).sort(
 );
 
 const pageTitle = SITE_TITLE + " - Blog";
+const getPostRoute = (post) =>
+  `/blog/${post.slug ?? post.id.replace(/\.[^.]+$/, "")}/`;
 ---
 
 <!doctype html>
@@ -30,15 +32,12 @@ const pageTitle = SITE_TITLE + " - Blog";
                 <small class="block mb-4">
                   <FormattedDate date={post.data.pubDate} />
                 </small>
-                <a
-                  href={`/blog/${post.slug}/`}
-                  class="block hover:underline mb-4"
-                >
+                <a href={getPostRoute(post)} class="block hover:underline mb-4">
                   <h2 class="title">{post.data.title}</h2>
                 </a>
                 <p>{post.data.description}</p>
                 <a
-                  href={`/blog/${post.slug}/`}
+                  href={getPostRoute(post)}
                   class="inline-block mt-6 mb-4 px-4 py-2 border-2 border-solid rounded cursor-pointer"
                 >
                   Read more

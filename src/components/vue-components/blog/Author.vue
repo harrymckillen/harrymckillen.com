@@ -9,13 +9,8 @@ const titleArticle = computed(() => {
 
 <template>
   <div class="author-card my-16 flex items-center flex-col-reverse sm:flex-row">
-    <img
-      src="/pfp.png"
-      alt="Harry's avatar"
-      loading="lazy"
-      quality="80"
-      class="w-24 h-24 object-cover rounded-full mt-4 sm:mt-0 sm:mr-4"
-    />
+    <img src="/pfp-scanned.png" alt="Harry's avatar" loading="lazy" quality="80"
+      class="w-24 h-24 object-cover rounded-full mt-4 sm:mt-0 sm:mr-4" />
     <div>
       <h4 class="text-xl font-semibold my-4">About the author</h4>
       <p>

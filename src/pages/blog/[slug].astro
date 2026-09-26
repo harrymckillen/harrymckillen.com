@@ -1,0 +1,60 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+
+  return posts.map((post, index) => {
+    const nextPost = index > 0 ? posts[index - 1] : null;
+    const prevPost = index < posts.length - 1 ? posts[index + 1] : null;
+    const slug = post.slug ?? post.id.replace(/\.[^.]+$/, "");
+
+    return {
+      params: { slug },
+      props: {
+        prevPost: prevPost
+          ? {
+              slug: prevPost.slug ?? prevPost.id.replace(/\.[^.]+$/, ""),
+              title: prevPost.data.title,
+            }
+          : null,
+        nextPost: nextPost
+          ? {
+              slug: nextPost.slug ?? nextPost.id.replace(/\.[^.]+$/, ""),
+              title: nextPost.data.title,
+            }
+          : null,
+      },
+    };
+  });
+}
+
+type Props = {
+  prevPost?: { slug: string; title: string };
+  nextPost?: { slug: string; title: string };
+};
+
+const { prevPost, nextPost } = Astro.props as Props;
+const slug = Astro.params.slug;
+const posts = await getCollection("blog");
+const post = posts.find(
+  (entry) => (entry.slug ?? entry.id.replace(/\.[^.]+$/, "")) === slug,
+);
+
+if (!post) {
+  throw new Error(`Blog post not found for slug: ${slug}`);
+}
+
+const { Content, remarkPluginFrontmatter } = await render(post);
+const postData = {
+  ...post.data,
+  minutesRead: remarkPluginFrontmatter.minutesRead,
+};
+---
+
+<BlogPost {...postData} prevPost={prevPost} nextPost={nextPost}>
+  <Content />
+</BlogPost>
