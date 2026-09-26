@@ -10,6 +10,7 @@ import { remarkReadingTime } from "./plugins/reading-time.mjs";
 // https://astro.build/config
 export default defineConfig({
   site: "http://harrymckillen.com",
+  base: "/",
   integrations: [mdx(), sitemap(), vue()],
   markdown: {
     processor: unified({
