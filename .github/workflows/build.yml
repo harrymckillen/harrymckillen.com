@@ -12,13 +12,19 @@ jobs:
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+
+      - name: ⚡ Setup Node.js
+        uses: actions/setup-node@v2
         with:
           node-version: "22"
+          cache: "npm"
+
       - name: ⤵️  NPM Install
-        run: npm i
+        run: npm ci
+
       - name: ⚙️ Build
         run: npm run build
+
       - name: 📂 Sync files to HTTPS Docs
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
@@ -26,7 +32,8 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PWD }}
           local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_ROOT_LIVE }}
+          server-dir: ${{ secrets.FTP_ROOT_LIVE }}/
+
       - name: 📂 Sync files to HTTP Docs
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
@@ -34,4 +41,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PWD }}
           local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_HTTP_ROOT_LIVE }}
+          server-dir: ${{ secrets.FTP_HTTP_ROOT_LIVE }}/
